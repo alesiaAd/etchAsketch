@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676222D92ABD00C9D954 /* AppDelegate.m */; };
-		F8AB676622D92ABD00C9D954 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676522D92ABD00C9D954 /* ViewController.m */; };
+		F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676522D92ABD00C9D954 /* MenuViewController.m */; };
 		F8AB676922D92ABD00C9D954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676722D92ABD00C9D954 /* Main.storyboard */; };
 		F8AB676B22D92ABF00C9D954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676A22D92ABF00C9D954 /* Assets.xcassets */; };
 		F8AB676E22D92ABF00C9D954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676C22D92ABF00C9D954 /* LaunchScreen.storyboard */; };
 		F8AB677122D92ABF00C9D954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB677022D92ABF00C9D954 /* main.m */; };
 		F8AB677B22D92AC000C9D954 /* etchAsketchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB677A22D92AC000C9D954 /* etchAsketchTests.m */; };
 		F8AB678622D92AC000C9D954 /* etchAsketchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB678522D92AC000C9D954 /* etchAsketchUITests.m */; };
+		F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679422D9509400C9D954 /* GalleryViewController.m */; };
+		F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679722D950CF00C9D954 /* EditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,8 @@
 		F8AB675E22D92ABD00C9D954 /* etchAsketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = etchAsketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AB676122D92ABD00C9D954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8AB676222D92ABD00C9D954 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F8AB676422D92ABD00C9D954 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F8AB676522D92ABD00C9D954 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F8AB676422D92ABD00C9D954 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		F8AB676522D92ABD00C9D954 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F8AB676822D92ABD00C9D954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8AB676A22D92ABF00C9D954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8AB676D22D92ABF00C9D954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		F8AB678122D92AC000C9D954 /* etchAsketchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = etchAsketchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AB678522D92AC000C9D954 /* etchAsketchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = etchAsketchUITests.m; sourceTree = "<group>"; };
 		F8AB678722D92AC000C9D954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8AB679322D9509400C9D954 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		F8AB679422D9509400C9D954 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
+		F8AB679622D950CF00C9D954 /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		F8AB679722D950CF00C9D954 /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +109,17 @@
 			children = (
 				F8AB676122D92ABD00C9D954 /* AppDelegate.h */,
 				F8AB676222D92ABD00C9D954 /* AppDelegate.m */,
-				F8AB676422D92ABD00C9D954 /* ViewController.h */,
-				F8AB676522D92ABD00C9D954 /* ViewController.m */,
+				F8AB676422D92ABD00C9D954 /* MenuViewController.h */,
+				F8AB676522D92ABD00C9D954 /* MenuViewController.m */,
 				F8AB676722D92ABD00C9D954 /* Main.storyboard */,
 				F8AB676A22D92ABF00C9D954 /* Assets.xcassets */,
 				F8AB676C22D92ABF00C9D954 /* LaunchScreen.storyboard */,
 				F8AB676F22D92ABF00C9D954 /* Info.plist */,
 				F8AB677022D92ABF00C9D954 /* main.m */,
+				F8AB679322D9509400C9D954 /* GalleryViewController.h */,
+				F8AB679422D9509400C9D954 /* GalleryViewController.m */,
+				F8AB679622D950CF00C9D954 /* EditViewController.h */,
+				F8AB679722D950CF00C9D954 /* EditViewController.m */,
 			);
 			path = etchAsketch;
 			sourceTree = "<group>";
@@ -262,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8AB676622D92ABD00C9D954 /* ViewController.m in Sources */,
+				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
+				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,
 				F8AB677122D92ABF00C9D954 /* main.m in Sources */,
 				F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */,
+				F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

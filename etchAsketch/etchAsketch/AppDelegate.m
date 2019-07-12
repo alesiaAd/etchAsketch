@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    MenuViewController *controller = [[MenuViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = navigationController;
     return YES;
 }
 
