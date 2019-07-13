@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoordinatingDelegate.h"
+
+
 
 @interface MenuViewController : UIViewController
+
+
+@property (nonatomic, weak) id<CoordinatingDelegate> coordinatingDelegate;
+
 
 
 @end

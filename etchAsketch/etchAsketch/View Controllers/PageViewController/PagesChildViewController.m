@@ -14,23 +14,32 @@
 
 @implementation PagesChildViewController
 
+#pragma mark - UIViewController lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pageImage = [UIImageView new];
-    self.pageImage.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:self.pageImage];
-    [NSLayoutConstraint activateConstraints:@[
-        [self.pageImage.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
-        [self.pageImage.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
-        [self.pageImage.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
-        [self.pageImage.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-36]
-    ]
-    ];
+    [self configurePageImage];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Page%ld", (long)self.index + 1]];
     [self.pageImage setImage:image];
+}
+
+#pragma mark -
+
+- (void)configurePageImage {
+    self.pageImage = [UIImageView new];
+    self.pageImage.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.pageImage];
+    [NSLayoutConstraint activateConstraints:
+     @[
+       [self.pageImage.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
+       [self.pageImage.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
+       [self.pageImage.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+       [self.pageImage.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-36]
+       ]
+     ];
 }
 
 @end

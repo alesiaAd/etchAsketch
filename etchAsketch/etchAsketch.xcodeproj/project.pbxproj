@@ -11,7 +11,7 @@
 		7A07827922D9F53F0046B0B5 /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */; };
 		7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827C22D9F74E0046B0B5 /* Paint.m */; };
 		7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827F22D9F79E0046B0B5 /* PaintView.m */; };
-		7A07828322D9F8220046B0B5 /* CoordinatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */; };
+		7A07828322D9F8220046B0B5 /* CoordinatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatingController.m */; };
 		F8A01B3E22DA39E000775C92 /* ImagesComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */; };
 		F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676222D92ABD00C9D954 /* AppDelegate.m */; };
 		F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676522D92ABD00C9D954 /* MenuViewController.m */; };
@@ -50,8 +50,9 @@
 		7A07827C22D9F74E0046B0B5 /* Paint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Paint.m; sourceTree = "<group>"; };
 		7A07827E22D9F79E0046B0B5 /* PaintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
 		7A07827F22D9F79E0046B0B5 /* PaintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
-		7A07828122D9F8220046B0B5 /* CoordinatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorViewController.h; sourceTree = "<group>"; };
-		7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatorViewController.m; sourceTree = "<group>"; };
+		7A07828122D9F8220046B0B5 /* CoordinatingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatingController.h; sourceTree = "<group>"; };
+		7A07828222D9F8220046B0B5 /* CoordinatingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatingController.m; sourceTree = "<group>"; };
+		7A07828622DA59280046B0B5 /* CoordinatingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatingDelegate.h; sourceTree = "<group>"; };
 		F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesComparator.m; sourceTree = "<group>"; };
 		F8A01B3D22DA39DF00775C92 /* ImagesComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesComparator.h; sourceTree = "<group>"; };
 		F8AB675E22D92ABD00C9D954 /* etchAsketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = etchAsketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,8 +142,9 @@
 		7A07828422D9F8260046B0B5 /* Coordinator View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7A07828122D9F8220046B0B5 /* CoordinatorViewController.h */,
-				7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */,
+				7A07828122D9F8220046B0B5 /* CoordinatingController.h */,
+				7A07828222D9F8220046B0B5 /* CoordinatingController.m */,
+				7A07828622DA59280046B0B5 /* CoordinatingDelegate.h */,
 			);
 			path = "Coordinator View Controller";
 			sourceTree = "<group>";
@@ -359,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A07828322D9F8220046B0B5 /* CoordinatorViewController.m in Sources */,
+				7A07828322D9F8220046B0B5 /* CoordinatingController.m in Sources */,
 				F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */,
 				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
 				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,

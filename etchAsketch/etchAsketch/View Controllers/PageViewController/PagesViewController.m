@@ -21,50 +21,45 @@ const NSInteger pagesCount = 2;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:[[self view] bounds]];
+    [self.pageController.view setFrame:[self.view bounds]];
     
     PagesChildViewController *initialViewController = [self viewControllerAtIndex:0];
-    
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
-    
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
     [self addChildViewController:self.pageController];
-    [[self view] addSubview:[self.pageController view]];
+    [self.view addSubview:self.pageController.view];
     [self.pageController didMoveToParentViewController:self];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    
     NSUInteger index = [(PagesChildViewController *)viewController index];
     if (index == 0) {
         return nil;
     }
     index--;
-    
     return [self viewControllerAtIndex:index];
-    
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    
     NSUInteger index = [(PagesChildViewController *)viewController index];
     index++;
     if (index == pagesCount) {
         return nil;
     }
-    
     return [self viewControllerAtIndex:index];
 }
 
 - (PagesChildViewController *)viewControllerAtIndex:(NSUInteger)index {
-    
     PagesChildViewController *childViewController = [[PagesChildViewController alloc] init];
     childViewController.index = index;
-    
+    if (index == pagesCount - 1) {
+        UIBarButtonItem *finishTutorial = [[UIBarButtonItem alloc] initWithTitle:@"Let's Sketch!" style:UIBarButtonItemStylePlain target:self.coordinatingDelegate action:@selector(hidePagesViewController)];
+        self.parentViewController.navigationItem.rightBarButtonItem = finishTutorial;
+    }
     return childViewController;
 }
 

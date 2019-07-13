@@ -7,8 +7,8 @@
 //
 
 #import "MenuViewController.h"
-#import "GalleryViewController.h"
-#import "EditViewController.h"
+
+
 
 @interface MenuViewController ()
 
@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor blueColor];
     UIStackView *stackView = [UIStackView new];
     [self.view addSubview:stackView];
     stackView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -63,18 +63,19 @@
 }
 
 - (void)galleryButtonPressed {
-    GalleryViewController *galleryViewController = [GalleryViewController new];
-    [self.navigationController pushViewController:galleryViewController animated:YES];
+    [self.coordinatingDelegate showGalleryViewControllerWithCompletion:^{
+        
+    }];
 }
 
 - (void)patternsButtonPressed {
-    GalleryViewController *galleryViewController = [GalleryViewController new];
-    [self.navigationController pushViewController:galleryViewController animated:YES];
+    [self.coordinatingDelegate showPatternsViewControllerWithCompletion:^{
+        
+    }];
 }
 
 - (void)sketchButtonPressed {
-    EditViewController *editViewController = [EditViewController new];
-    [self.navigationController pushViewController:editViewController animated:YES];
+    [self.coordinatingDelegate showCanvasViewController];
 }
 
 @end

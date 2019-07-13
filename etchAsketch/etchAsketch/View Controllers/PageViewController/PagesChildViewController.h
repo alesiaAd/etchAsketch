@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+
 @interface PagesChildViewController : UIViewController
+
 
 @property (assign, nonatomic) NSInteger index;
 @property (nonatomic, strong) UIImageView *pageImage;
+
 
 @end
