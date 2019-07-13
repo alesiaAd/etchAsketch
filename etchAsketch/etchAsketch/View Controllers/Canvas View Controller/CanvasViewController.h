@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface CanvasViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIView *canvasView;
+@property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
+@property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;
+- (IBAction)randomValueDidPressed:(id)sender;
 @end
 
-NS_ASSUME_NONNULL_END
+

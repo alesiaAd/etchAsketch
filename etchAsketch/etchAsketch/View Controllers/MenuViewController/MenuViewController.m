@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "GalleryViewController.h"
 #import "EditViewController.h"
+#import "CanvasViewController.h"
 
 @interface MenuViewController ()
 
@@ -73,8 +74,13 @@
 }
 
 - (void)sketchButtonPressed {
-    EditViewController *editViewController = [EditViewController new];
-    [self.navigationController pushViewController:editViewController animated:YES];
+    CanvasViewController *canvasViewController = [CanvasViewController new];
+    [self.navigationController pushViewController:canvasViewController animated:YES];
 }
+
+//- (void)sketchButtonPressed {
+//    EditViewController *editViewController = [EditViewController new];
+//    [self.navigationController pushViewController:editViewController animated:YES];
+//}
 
 @end

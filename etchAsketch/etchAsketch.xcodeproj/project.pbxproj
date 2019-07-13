@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5422C122DA036C00DD9F54 /* KnobView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5422C022DA036C00DD9F54 /* KnobView.m */; };
+		0B5422C422DA043D00DD9F54 /* KnobRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5422C322DA043D00DD9F54 /* KnobRender.m */; };
+		0B5422C722DA047600DD9F54 /* KnobGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5422C622DA047600DD9F54 /* KnobGestureRecognizer.m */; };
 		7A07827822D9F53F0046B0B5 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827622D9F53F0046B0B5 /* CanvasViewController.m */; };
 		7A07827922D9F53F0046B0B5 /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */; };
 		7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827C22D9F74E0046B0B5 /* Paint.m */; };
@@ -42,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5422BF22DA036C00DD9F54 /* KnobView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KnobView.h; sourceTree = "<group>"; };
+		0B5422C022DA036C00DD9F54 /* KnobView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnobView.m; sourceTree = "<group>"; };
+		0B5422C222DA043D00DD9F54 /* KnobRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KnobRender.h; sourceTree = "<group>"; };
+		0B5422C322DA043D00DD9F54 /* KnobRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnobRender.m; sourceTree = "<group>"; };
+		0B5422C522DA047600DD9F54 /* KnobGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KnobGestureRecognizer.h; sourceTree = "<group>"; };
+		0B5422C622DA047600DD9F54 /* KnobGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnobGestureRecognizer.m; sourceTree = "<group>"; };
 		7A07827522D9F53F0046B0B5 /* CanvasViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
 		7A07827622D9F53F0046B0B5 /* CanvasViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
 		7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasViewController.xib; sourceTree = "<group>"; };
@@ -131,6 +140,12 @@
 				7A07827522D9F53F0046B0B5 /* CanvasViewController.h */,
 				7A07827622D9F53F0046B0B5 /* CanvasViewController.m */,
 				7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */,
+				0B5422BF22DA036C00DD9F54 /* KnobView.h */,
+				0B5422C022DA036C00DD9F54 /* KnobView.m */,
+				0B5422C222DA043D00DD9F54 /* KnobRender.h */,
+				0B5422C322DA043D00DD9F54 /* KnobRender.m */,
+				0B5422C522DA047600DD9F54 /* KnobGestureRecognizer.h */,
+				0B5422C622DA047600DD9F54 /* KnobGestureRecognizer.m */,
 			);
 			path = "Canvas View Controller";
 			sourceTree = "<group>";
@@ -351,12 +366,15 @@
 				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
 				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,
 				7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */,
+				0B5422C722DA047600DD9F54 /* KnobGestureRecognizer.m in Sources */,
 				7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */,
+				0B5422C122DA036C00DD9F54 /* KnobView.m in Sources */,
 				F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */,
 				7A07827822D9F53F0046B0B5 /* CanvasViewController.m in Sources */,
 				F8AB677122D92ABF00C9D954 /* main.m in Sources */,
 				F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */,
 				F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */,
+				0B5422C422DA043D00DD9F54 /* KnobRender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
