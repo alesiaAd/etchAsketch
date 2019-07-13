@@ -10,4 +10,32 @@
 
 @implementation Paint
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        _path = [decoder decodeObjectForKey:@"path"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.path forKey:@"path"];
+}
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
+- (void)addVertexToPath:(Vertex *)vertex {
+    [self.path addObject:vertex];
+}
+
+- (void)removeLastVertex {
+    [self.path removeLastObject];
+}
+
+- (Vertex *)lastChild {
+    return [self.path lastObject];
+}
+
+
 @end

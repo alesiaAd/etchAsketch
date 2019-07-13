@@ -11,7 +11,7 @@
 @implementation DrawingData
 
 - (instancetype)init {
-    if (self == [super init]) {
+    if (self = [super init]) {
         self.pixels = [NSMutableArray new];
     }
     return self;

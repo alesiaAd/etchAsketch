@@ -11,9 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class Paint;
-@protocol MarkProtocol;
+
 
 @interface PaintView : UIView
+
+@property (nonatomic, strong) Paint *paint;
 
 @end
 

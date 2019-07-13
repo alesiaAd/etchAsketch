@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Vertex.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,16 +16,20 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol  MarkProtocol;
 
 
-@interface Paint : NSObject
+@interface Paint : NSObject <NSCoding, NSSecureCoding>
+
+@property (nonatomic, strong) NSMutableArray<Vertex *> *path;
+
+
+- (void)addVertexToPath:(Vertex *)vertex;
+- (void)removeLastVertex;
+- (Vertex *)lastChild;
 
 
 @end
 
 
-
 @protocol MarkProtocol <NSObject>
-
-
 @optional
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, assign) CGSize size;
