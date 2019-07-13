@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "DrawingData.h"
 
-@interface CanvasViewController : UIViewController
+@interface CanvasViewController : UIViewController <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *canvasView;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;
+@property (strong,nonatomic) NSArray *array;
+@property (nonatomic,strong) UIView *viewR;
+@property (nonatomic,strong) UIView *viewL;
+
+
 - (IBAction)randomValueDidPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
