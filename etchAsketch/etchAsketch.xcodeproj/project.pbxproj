@@ -12,6 +12,7 @@
 		7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827C22D9F74E0046B0B5 /* Paint.m */; };
 		7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827F22D9F79E0046B0B5 /* PaintView.m */; };
 		7A07828322D9F8220046B0B5 /* CoordinatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */; };
+		F8A01B3E22DA39E000775C92 /* ImagesComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */; };
 		F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676222D92ABD00C9D954 /* AppDelegate.m */; };
 		F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676522D92ABD00C9D954 /* MenuViewController.m */; };
 		F8AB676B22D92ABF00C9D954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676A22D92ABF00C9D954 /* Assets.xcassets */; };
@@ -51,6 +52,8 @@
 		7A07827F22D9F79E0046B0B5 /* PaintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
 		7A07828122D9F8220046B0B5 /* CoordinatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorViewController.h; sourceTree = "<group>"; };
 		7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatorViewController.m; sourceTree = "<group>"; };
+		F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesComparator.m; sourceTree = "<group>"; };
+		F8A01B3D22DA39DF00775C92 /* ImagesComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesComparator.h; sourceTree = "<group>"; };
 		F8AB675E22D92ABD00C9D954 /* etchAsketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = etchAsketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AB676122D92ABD00C9D954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8AB676222D92ABD00C9D954 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -155,6 +158,15 @@
 			path = "Paint Classes";
 			sourceTree = "<group>";
 		};
+		F8A01B3F22DA39EF00775C92 /* ImagesComparator */ = {
+			isa = PBXGroup;
+			children = (
+				F8A01B3D22DA39DF00775C92 /* ImagesComparator.h */,
+				F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */,
+			);
+			path = ImagesComparator;
+			sourceTree = "<group>";
+		};
 		F8AB675522D92ABD00C9D954 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +190,7 @@
 		F8AB676022D92ABD00C9D954 /* etchAsketch */ = {
 			isa = PBXGroup;
 			children = (
+				F8A01B3F22DA39EF00775C92 /* ImagesComparator */,
 				F8AB676122D92ABD00C9D954 /* AppDelegate.h */,
 				F8AB676222D92ABD00C9D954 /* AppDelegate.m */,
 				F8AB676A22D92ABF00C9D954 /* Assets.xcassets */,
@@ -353,6 +366,7 @@
 				7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */,
 				7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */,
 				F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */,
+				F8A01B3E22DA39E000775C92 /* ImagesComparator.m in Sources */,
 				7A07827822D9F53F0046B0B5 /* CanvasViewController.m in Sources */,
 				F8AB677122D92ABF00C9D954 /* main.m in Sources */,
 				F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */,
