@@ -15,6 +15,7 @@
                 <outlet property="canvasView" destination="xLa-8x-iAy" id="uIE-RY-qgV"/>
                 <outlet property="knobPlaceHolderX" destination="B71-QB-vJk" id="gql-su-e1f"/>
                 <outlet property="knobPlaceHolderY" destination="58o-b6-VPL" id="75J-Mf-pjd"/>
+                <outlet property="saveButton" destination="45p-2T-GrR" id="jxt-8W-33U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,25 +25,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-8x-iAy">
-                    <rect key="frame" x="215" y="87" width="467" height="274"/>
+                    <rect key="frame" x="210" y="42" width="527" height="308"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B71-QB-vJk" customClass="KnobView">
-                    <rect key="frame" x="99" y="172" width="108" height="104"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58o-b6-VPL" customClass="KnobView">
-                    <rect key="frame" x="690" y="172" width="108" height="104"/>
+                    <rect key="frame" x="760" y="144" width="108" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <action selector="randomValueDidPressed:" destination="-1" eventType="valueChanged" id="xra-d9-ik4"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B71-QB-vJk" customClass="KnobView">
+                    <rect key="frame" x="64" y="144" width="108" height="104"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45p-2T-GrR">
+                    <rect key="frame" x="771" y="42" width="97" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="7sT-aX-Nbl"/>
+                        <constraint firstAttribute="height" constant="44" id="VHr-uk-IOR"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="45p-2T-GrR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="42" id="cMG-zq-Pa2"/>
+                <constraint firstItem="45p-2T-GrR" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="16" id="mqc-oI-99y"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.61607142857142" y="130.43478260869566"/>
         </view>
