@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "DrawingData.h"
 
 @interface CanvasViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *canvasView;
+@property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
+@property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;
+- (IBAction)randomValueDidPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (nonatomic, strong) DrawingData *drawingData;
 
 @end
 
-NS_ASSUME_NONNULL_END
+

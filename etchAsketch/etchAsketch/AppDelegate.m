@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MenuViewController.h"
-#import "PagesViewController.h"
 #import "CoordinatingController.h"
+#import "Drawings.h"
 
 @interface AppDelegate ()
 
@@ -21,13 +20,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
-//    MenuViewController *controller = [[MenuViewController alloc] init];
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-//    navigationController.view.backgroundColor = [UIColor whiteColor];
     CoordinatingController *coordinatingController = [CoordinatingController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coordinatingController];
-//        navigationController.view.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
+    [[Drawings sharedInstance] loadData];
     return YES;
 }
 
