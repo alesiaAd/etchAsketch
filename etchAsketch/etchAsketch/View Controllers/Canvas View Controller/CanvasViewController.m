@@ -10,10 +10,10 @@
 #import "KnobView.h"
 #import "KnobGestureRecognizer.h"
 #import "KnobRender.h"
-#import "Drawings.h"
 
 @interface CanvasViewController (){
     KnobView *_knobControl;
+    KnobView *_knobControlTwo;
 }
 
 @end
@@ -22,14 +22,25 @@
     [super viewDidLoad];
     _knobControl = [[KnobView alloc] initWithFrame:self.knobPlaceHolderY.bounds];
     [self.knobPlaceHolderY addSubview:_knobControl];
+    
+    _knobControlTwo = [[KnobView alloc] initWithFrame:self.knobPlaceHolderX.bounds];
+    [self.knobPlaceHolderX addSubview:_knobControlTwo];
+    
+    
     _knobControl.lineWidth = 4.0;
-    _knobControl.pointerLength = 8.0;
+    _knobControl.pointerLength = 4.0;
+    
+    
+    _knobControlTwo.lineWidth = 4.0;
+    _knobControlTwo.pointerLength = 4.0;
+//
     self.view.tintColor = [UIColor redColor];
     [_knobControl addObserver:self forKeyPath:@"value" options:0 context:NULL];
-    _knobControl.continuous = NO;
+    [_knobControlTwo addObserver:self forKeyPath:@"value" options:0 context:NULL];
+   // _knobControl.continuous = NO;
     
-    self.drawingData = [DrawingData new];
-   
+    _viewR = [[UIView alloc] init];
+    _viewL = [[UIView alloc] init];
     [self.saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents: UIControlEventTouchUpInside];
 }
 - (IBAction)showMenu:(id)sender {
@@ -46,8 +57,9 @@
 }
 
 - (IBAction)randomValueDidPressed:(id)sender {
-    for (NSInteger i = 0; i < 400; i++){
-    [_knobControl setValue:i];
+    for (NSInteger i = 0; i < 1000; i++){
+        [_knobControl setValue:i];
+        [_knobControlTwo setValue:i];
     }
 }
 
@@ -57,13 +69,18 @@
                        context:(void *)context
 {
     NSLog(@"%f",_knobControl.value);
-    CGRect frame = CGRectMake(50, _knobControl.value, 10, 10);
-    UIView *view = [[UIView alloc] initWithFrame:frame];
-    view.layer.backgroundColor = UIColor.blueColor.CGColor;
+    [_viewR setFrame:CGRectMake(_knobControlTwo.value, 0, 10, 10)];
+    [_viewL setFrame:CGRectMake(0, _knobControl.value, 10, 10)];
+    _viewR.layer.backgroundColor = UIColor.blueColor.CGColor;
+    _viewL.layer.backgroundColor = UIColor.redColor.CGColor;
     
-    [self.drawingData.pixels addObject:[NSValue valueWithCGRect:frame]];
+
+    //CGPoint p1 = CGPointMake(_knobControl.value, 50);
     
-    [_canvasView addSubview:view];
+    [_canvasView addSubview:_viewR];
+    [_viewR addSubview:_viewL];
+
+
 }
 
 
