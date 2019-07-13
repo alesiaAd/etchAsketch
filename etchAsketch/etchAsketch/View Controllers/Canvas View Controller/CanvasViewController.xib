@@ -15,6 +15,7 @@
                 <outlet property="canvasView" destination="xLa-8x-iAy" id="uIE-RY-qgV"/>
                 <outlet property="knobPlaceHolderX" destination="B71-QB-vJk" id="gql-su-e1f"/>
                 <outlet property="knobPlaceHolderY" destination="58o-b6-VPL" id="75J-Mf-pjd"/>
+                <outlet property="saveButton" destination="45p-2T-GrR" id="jxt-8W-33U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,8 +42,20 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45p-2T-GrR">
+                    <rect key="frame" x="771" y="42" width="97" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="7sT-aX-Nbl"/>
+                        <constraint firstAttribute="height" constant="44" id="VHr-uk-IOR"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="45p-2T-GrR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="42" id="cMG-zq-Pa2"/>
+                <constraint firstItem="45p-2T-GrR" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="16" id="mqc-oI-99y"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.61607142857142" y="130.43478260869566"/>
         </view>

@@ -10,6 +10,7 @@
 #import "KnobView.h"
 #import "KnobGestureRecognizer.h"
 #import "KnobRender.h"
+#import "Drawings.h"
 
 @interface CanvasViewController (){
     KnobView *_knobControl;
@@ -26,7 +27,15 @@
     self.view.tintColor = [UIColor redColor];
     [_knobControl addObserver:self forKeyPath:@"value" options:0 context:NULL];
     _knobControl.continuous = NO;
+    
+    self.drawingData = [DrawingData new];
    
+    [self.saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents: UIControlEventTouchUpInside];
+}
+
+- (void)saveButtonPressed {
+    [[Drawings sharedInstance].drawings addObject:self.drawingData];
+    [[Drawings sharedInstance] saveData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,8 +54,11 @@
                        context:(void *)context
 {
     NSLog(@"%f",_knobControl.value);
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(50, _knobControl.value, 10, 10)];
+    CGRect frame = CGRectMake(50, _knobControl.value, 10, 10);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
     view.layer.backgroundColor = UIColor.blueColor.CGColor;
+    
+    [self.drawingData.pixels addObject:[NSValue valueWithCGRect:frame]];
     
     [_canvasView addSubview:view];
 }

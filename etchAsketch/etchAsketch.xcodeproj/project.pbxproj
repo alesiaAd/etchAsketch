@@ -15,6 +15,8 @@
 		7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827C22D9F74E0046B0B5 /* Paint.m */; };
 		7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827F22D9F79E0046B0B5 /* PaintView.m */; };
 		7A07828322D9F8220046B0B5 /* CoordinatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */; };
+		F8A01B4222DA4B9B00775C92 /* DrawingData.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B4122DA4B9B00775C92 /* DrawingData.m */; };
+		F8A01B4522DA552F00775C92 /* Drawings.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B4422DA552F00775C92 /* Drawings.m */; };
 		F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676222D92ABD00C9D954 /* AppDelegate.m */; };
 		F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676522D92ABD00C9D954 /* MenuViewController.m */; };
 		F8AB676B22D92ABF00C9D954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676A22D92ABF00C9D954 /* Assets.xcassets */; };
@@ -60,6 +62,10 @@
 		7A07827F22D9F79E0046B0B5 /* PaintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
 		7A07828122D9F8220046B0B5 /* CoordinatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorViewController.h; sourceTree = "<group>"; };
 		7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatorViewController.m; sourceTree = "<group>"; };
+		F8A01B4022DA4B9B00775C92 /* DrawingData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingData.h; sourceTree = "<group>"; };
+		F8A01B4122DA4B9B00775C92 /* DrawingData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingData.m; sourceTree = "<group>"; };
+		F8A01B4322DA552F00775C92 /* Drawings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawings.h; sourceTree = "<group>"; };
+		F8A01B4422DA552F00775C92 /* Drawings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Drawings.m; sourceTree = "<group>"; };
 		F8AB675E22D92ABD00C9D954 /* etchAsketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = etchAsketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AB676122D92ABD00C9D954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8AB676222D92ABD00C9D954 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,6 +152,10 @@
 				0B5422C322DA043D00DD9F54 /* KnobRender.m */,
 				0B5422C522DA047600DD9F54 /* KnobGestureRecognizer.h */,
 				0B5422C622DA047600DD9F54 /* KnobGestureRecognizer.m */,
+				F8A01B4022DA4B9B00775C92 /* DrawingData.h */,
+				F8A01B4122DA4B9B00775C92 /* DrawingData.m */,
+				F8A01B4322DA552F00775C92 /* Drawings.h */,
+				F8A01B4422DA552F00775C92 /* Drawings.m */,
 			);
 			path = "Canvas View Controller";
 			sourceTree = "<group>";
@@ -365,7 +375,9 @@
 				F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */,
 				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
 				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,
+				F8A01B4522DA552F00775C92 /* Drawings.m in Sources */,
 				7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */,
+				F8A01B4222DA4B9B00775C92 /* DrawingData.m in Sources */,
 				0B5422C722DA047600DD9F54 /* KnobGestureRecognizer.m in Sources */,
 				7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */,
 				0B5422C122DA036C00DD9F54 /* KnobView.m in Sources */,

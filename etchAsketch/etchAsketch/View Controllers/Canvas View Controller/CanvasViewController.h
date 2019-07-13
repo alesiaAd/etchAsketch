@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
+#import "DrawingData.h"
 
 @interface CanvasViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *canvasView;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;
 - (IBAction)randomValueDidPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (nonatomic, strong) DrawingData *drawingData;
+
 @end
 
 

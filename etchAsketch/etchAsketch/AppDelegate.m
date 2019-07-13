@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MenuViewController.h"
 #import "PagesViewController.h"
+#import "Drawings.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
     navigationController.view.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
+    [[Drawings sharedInstance] loadData];
     return YES;
 }
 
