@@ -17,6 +17,8 @@
 		F8AB678622D92AC000C9D954 /* etchAsketchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB678522D92AC000C9D954 /* etchAsketchUITests.m */; };
 		F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679422D9509400C9D954 /* GalleryViewController.m */; };
 		F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679722D950CF00C9D954 /* EditViewController.m */; };
+		F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679B22D9AE7000C9D954 /* PagesChildViewController.m */; };
+		F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679E22D9AE8400C9D954 /* PagesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		F8AB679422D9509400C9D954 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
 		F8AB679622D950CF00C9D954 /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		F8AB679722D950CF00C9D954 /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		F8AB679A22D9AE7000C9D954 /* PagesChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesChildViewController.h; sourceTree = "<group>"; };
+		F8AB679B22D9AE7000C9D954 /* PagesChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagesChildViewController.m; sourceTree = "<group>"; };
+		F8AB679D22D9AE8400C9D954 /* PagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
+		F8AB679E22D9AE8400C9D954 /* PagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		F8AB676022D92ABD00C9D954 /* etchAsketch */ = {
 			isa = PBXGroup;
 			children = (
+				F8AB679922D9ADEF00C9D954 /* PageViewController */,
 				F8AB676122D92ABD00C9D954 /* AppDelegate.h */,
 				F8AB676222D92ABD00C9D954 /* AppDelegate.m */,
 				F8AB676422D92ABD00C9D954 /* MenuViewController.h */,
@@ -140,6 +147,17 @@
 				F8AB678722D92AC000C9D954 /* Info.plist */,
 			);
 			path = etchAsketchUITests;
+			sourceTree = "<group>";
+		};
+		F8AB679922D9ADEF00C9D954 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8AB679A22D9AE7000C9D954 /* PagesChildViewController.h */,
+				F8AB679B22D9AE7000C9D954 /* PagesChildViewController.m */,
+				F8AB679D22D9AE8400C9D954 /* PagesViewController.h */,
+				F8AB679E22D9AE8400C9D954 /* PagesViewController.m */,
+			);
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */,
 				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
 				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,
+				F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */,
 				F8AB677122D92ABF00C9D954 /* main.m in Sources */,
 				F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */,
 				F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */,
