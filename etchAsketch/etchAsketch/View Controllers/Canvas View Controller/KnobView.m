@@ -24,7 +24,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _minimumValue = 0.0;
-        _maximumValue = 400.0;
+        _maximumValue = 300.0;
         _value = 0.0;
         _continuous = YES;
         _gestureRecognizer = [[KnobGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
@@ -54,7 +54,7 @@
 }
 #pragma mark - Property overrides
 - (void)setBounds:(CGRect)bounds{
-    [_knobRenderer updateWithBounds:bounds];
+   // [_knobRenderer updateWithBounds:bounds];
 }
 - (void)setValue:(CGFloat)value
 {
