@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A07827822D9F53F0046B0B5 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827622D9F53F0046B0B5 /* CanvasViewController.m */; };
+		7A07827922D9F53F0046B0B5 /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */; };
+		7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827C22D9F74E0046B0B5 /* Paint.m */; };
+		7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827F22D9F79E0046B0B5 /* PaintView.m */; };
+		7A07828322D9F8220046B0B5 /* CoordinatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */; };
 		F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676222D92ABD00C9D954 /* AppDelegate.m */; };
 		F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB676522D92ABD00C9D954 /* MenuViewController.m */; };
-		F8AB676922D92ABD00C9D954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676722D92ABD00C9D954 /* Main.storyboard */; };
 		F8AB676B22D92ABF00C9D954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676A22D92ABF00C9D954 /* Assets.xcassets */; };
-		F8AB676E22D92ABF00C9D954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AB676C22D92ABF00C9D954 /* LaunchScreen.storyboard */; };
 		F8AB677122D92ABF00C9D954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB677022D92ABF00C9D954 /* main.m */; };
 		F8AB677B22D92AC000C9D954 /* etchAsketchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB677A22D92AC000C9D954 /* etchAsketchTests.m */; };
 		F8AB678622D92AC000C9D954 /* etchAsketchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB678522D92AC000C9D954 /* etchAsketchUITests.m */; };
@@ -39,14 +42,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A07827522D9F53F0046B0B5 /* CanvasViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
+		7A07827622D9F53F0046B0B5 /* CanvasViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
+		7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasViewController.xib; sourceTree = "<group>"; };
+		7A07827B22D9F74E0046B0B5 /* Paint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Paint.h; sourceTree = "<group>"; };
+		7A07827C22D9F74E0046B0B5 /* Paint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Paint.m; sourceTree = "<group>"; };
+		7A07827E22D9F79E0046B0B5 /* PaintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
+		7A07827F22D9F79E0046B0B5 /* PaintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
+		7A07828122D9F8220046B0B5 /* CoordinatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorViewController.h; sourceTree = "<group>"; };
+		7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatorViewController.m; sourceTree = "<group>"; };
 		F8AB675E22D92ABD00C9D954 /* etchAsketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = etchAsketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AB676122D92ABD00C9D954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8AB676222D92ABD00C9D954 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F8AB676422D92ABD00C9D954 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F8AB676522D92ABD00C9D954 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		F8AB676822D92ABD00C9D954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8AB676A22D92ABF00C9D954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F8AB676D22D92ABF00C9D954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8AB676F22D92ABF00C9D954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8AB677022D92ABF00C9D954 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8AB677622D92AC000C9D954 /* etchAsketchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = etchAsketchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +100,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A07827322D9F49C0046B0B5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A07828422D9F8260046B0B5 /* Coordinator View Controller */,
+				7A07827A22D9F54E0046B0B5 /* Canvas View Controller */,
+				F8AB679922D9ADEF00C9D954 /* PageViewController */,
+				7A07827422D9F4EB0046B0B5 /* MenuViewController */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7A07827422D9F4EB0046B0B5 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8AB676422D92ABD00C9D954 /* MenuViewController.h */,
+				F8AB676522D92ABD00C9D954 /* MenuViewController.m */,
+				F8AB679322D9509400C9D954 /* GalleryViewController.h */,
+				F8AB679422D9509400C9D954 /* GalleryViewController.m */,
+				F8AB679622D950CF00C9D954 /* EditViewController.h */,
+				F8AB679722D950CF00C9D954 /* EditViewController.m */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		7A07827A22D9F54E0046B0B5 /* Canvas View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A07828522D9F8D80046B0B5 /* Paint Classes */,
+				7A07827522D9F53F0046B0B5 /* CanvasViewController.h */,
+				7A07827622D9F53F0046B0B5 /* CanvasViewController.m */,
+				7A07827722D9F53F0046B0B5 /* CanvasViewController.xib */,
+			);
+			path = "Canvas View Controller";
+			sourceTree = "<group>";
+		};
+		7A07828422D9F8260046B0B5 /* Coordinator View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A07828122D9F8220046B0B5 /* CoordinatorViewController.h */,
+				7A07828222D9F8220046B0B5 /* CoordinatorViewController.m */,
+			);
+			path = "Coordinator View Controller";
+			sourceTree = "<group>";
+		};
+		7A07828522D9F8D80046B0B5 /* Paint Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7A07827B22D9F74E0046B0B5 /* Paint.h */,
+				7A07827C22D9F74E0046B0B5 /* Paint.m */,
+				7A07827E22D9F79E0046B0B5 /* PaintView.h */,
+				7A07827F22D9F79E0046B0B5 /* PaintView.m */,
+			);
+			path = "Paint Classes";
+			sourceTree = "<group>";
+		};
 		F8AB675522D92ABD00C9D954 = {
 			isa = PBXGroup;
 			children = (
@@ -113,20 +178,12 @@
 		F8AB676022D92ABD00C9D954 /* etchAsketch */ = {
 			isa = PBXGroup;
 			children = (
-				F8AB679922D9ADEF00C9D954 /* PageViewController */,
 				F8AB676122D92ABD00C9D954 /* AppDelegate.h */,
 				F8AB676222D92ABD00C9D954 /* AppDelegate.m */,
-				F8AB676422D92ABD00C9D954 /* MenuViewController.h */,
-				F8AB676522D92ABD00C9D954 /* MenuViewController.m */,
-				F8AB676722D92ABD00C9D954 /* Main.storyboard */,
 				F8AB676A22D92ABF00C9D954 /* Assets.xcassets */,
-				F8AB676C22D92ABF00C9D954 /* LaunchScreen.storyboard */,
 				F8AB676F22D92ABF00C9D954 /* Info.plist */,
 				F8AB677022D92ABF00C9D954 /* main.m */,
-				F8AB679322D9509400C9D954 /* GalleryViewController.h */,
-				F8AB679422D9509400C9D954 /* GalleryViewController.m */,
-				F8AB679622D950CF00C9D954 /* EditViewController.h */,
-				F8AB679722D950CF00C9D954 /* EditViewController.m */,
+				7A07827322D9F49C0046B0B5 /* View Controllers */,
 			);
 			path = etchAsketch;
 			sourceTree = "<group>";
@@ -263,9 +320,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8AB676E22D92ABF00C9D954 /* LaunchScreen.storyboard in Resources */,
+				7A07827922D9F53F0046B0B5 /* CanvasViewController.xib in Resources */,
 				F8AB676B22D92ABF00C9D954 /* Assets.xcassets in Resources */,
-				F8AB676922D92ABD00C9D954 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,10 +346,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A07828322D9F8220046B0B5 /* CoordinatorViewController.m in Sources */,
 				F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */,
 				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
 				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,
+				7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */,
+				7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */,
 				F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */,
+				7A07827822D9F53F0046B0B5 /* CanvasViewController.m in Sources */,
 				F8AB677122D92ABF00C9D954 /* main.m in Sources */,
 				F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */,
 				F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */,
@@ -330,25 +390,6 @@
 			targetProxy = F8AB678222D92AC000C9D954 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F8AB676722D92ABD00C9D954 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8AB676822D92ABD00C9D954 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F8AB676C22D92ABF00C9D954 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8AB676D22D92ABF00C9D954 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F8AB678822D92AC000C9D954 /* Debug */ = {
