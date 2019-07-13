@@ -10,6 +10,7 @@
 #import "KnobView.h"
 #import "KnobGestureRecognizer.h"
 #import "KnobRender.h"
+#import "Drawings.h"
 
 @interface CanvasViewController (){
     KnobView *_knobControl;
@@ -48,9 +49,8 @@
 }
 
 - (void)saveButtonPressed {
-//    [[Drawings sharedInstance].drawings addObject:self.drawingData];
-//    [[Drawings sharedInstance] saveData];
-
+    [[Drawings sharedInstance].drawings addObject:self.drawingData];
+    [[Drawings sharedInstance] saveData];
 }
 
 - (void)didReceiveMemoryWarning {
