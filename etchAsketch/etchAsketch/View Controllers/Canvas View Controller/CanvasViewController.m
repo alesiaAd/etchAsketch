@@ -74,7 +74,16 @@
 
 - (IBAction)showMenu:(id)sender {
     self.navigationController.navigationBarHidden = NO;
-    [self.navigationController popViewControllerAnimated:YES];
+    [self configureAnimation];
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)configureAnimation {
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.62f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
 }
 
 - (void)saveButtonPressed {

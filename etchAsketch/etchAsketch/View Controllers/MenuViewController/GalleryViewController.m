@@ -38,11 +38,36 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerClass:GalleryCollectionViewCell.class forCellWithReuseIdentifier:cellIdentifier];
+    [self configureNavigation];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.collectionView reloadData];
 }
+
+#pragma - mark Navigation animation and appearance
+
+- (void)configureNavigation {
+    [self.navigationItem setHidesBackButton:YES animated:NO];
+    UIBarButtonItem *closeGallery = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"cross exit button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(showMenu)];
+    self.navigationItem.rightBarButtonItem = closeGallery;
+}
+
+- (void)showMenu {
+    self.navigationController.navigationBarHidden = NO;
+    [self configureAnimation];
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)configureAnimation {
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.62f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+}
+
+#pragma - mark
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     GalleryCollectionViewCell *cell = (GalleryCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -62,6 +87,8 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     Paint *paint = self.galleryArray[indexPath.item];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController popViewControllerAnimated:NO];
     [self.coordinatingDelegate showCanvasViewControllerWithSketch:paint];
 }
 

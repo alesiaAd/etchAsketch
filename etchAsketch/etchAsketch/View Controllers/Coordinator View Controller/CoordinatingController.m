@@ -25,7 +25,6 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 @property (nonatomic, strong) GalleryViewController *patternsViewController;
 @property (nonatomic, strong) CanvasViewController *canvasViewController;
 @property (nonatomic, strong) PagesViewController *pagesViewController;
-
 @end
 
 
@@ -64,6 +63,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
     } else {
         [self showMenu];
     }
+
 
 }
 
@@ -107,27 +107,38 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 #pragma mark - CoordinatingDelegate
 
+- (void)configureAnimation {
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.62f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+}
+
 - (void)showCanvasViewController {
     self.navigationController.navigationBarHidden = YES;
-    [self.navigationController pushViewController:self.canvasViewController animated:YES];
+    [self configureAnimation];
+    [self.navigationController pushViewController:self.canvasViewController animated:NO];
 }
 
 - (void)showGalleryViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
+    [self configureAnimation];
     [[Drawings sharedInstance] loadData];
     self.galleryViewController.galleryArray = [Drawings sharedInstance].drawings;
-    [self.navigationController pushViewController:self.galleryViewController animated:YES];
+    [self.navigationController pushViewController:self.galleryViewController animated:NO];
 }
 
 - (void)showPatternsViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
+    [self configureAnimation];
     self.patternsViewController.galleryArray = [Patterns sharedInstance].patterns;
-    [self.navigationController pushViewController:self.patternsViewController animated:YES];
+    [self.navigationController pushViewController:self.patternsViewController animated:NO];
 }
 
-- (void)showMenuWithCompletion:(nonnull CompletionHandler)handler {
-    [self showMenu];
-}
+//- (void)showMenuWithCompletion:(nonnull CompletionHandler)handler {
+//    [self showMenu];
+//}
 
 - (void)hidePagesViewController {
     [self.pagesViewController willMoveToParentViewController:nil];
@@ -141,7 +152,8 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 - (void)showCanvasViewControllerWithSketch:(Paint *)sketch {
     self.navigationController.navigationBarHidden = YES;
     self.canvasViewController.backgroundPaint = sketch;
-    [self.navigationController pushViewController:self.canvasViewController animated:YES];
+    [self showCanvasViewController];
+//    [self.navigationController pushViewController:self.canvasViewController animated:YES];
 }
 
 - (void)swowCanvasViewControllerAndApplyDrawingSettings:(DrawingSettings *)settings {

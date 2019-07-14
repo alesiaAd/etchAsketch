@@ -64,13 +64,11 @@
 
 - (void)galleryButtonPressed {
     [self.coordinatingDelegate showGalleryViewControllerWithCompletion:^{
-        
     }];
 }
 
 - (void)patternsButtonPressed {
     [self.coordinatingDelegate showPatternsViewControllerWithCompletion:^{
-        
     }];
 }
 

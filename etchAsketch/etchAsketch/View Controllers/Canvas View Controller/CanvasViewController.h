@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DrawingData.h"
 
+
 @class PaintView;
 @class Paint;
 
@@ -21,7 +22,6 @@
 @property (strong,nonatomic) NSArray *array;
 @property (nonatomic,strong) UIView *viewR;
 @property (nonatomic,strong) UIView *viewL;
-
 
 - (IBAction)randomValueDidPressed:(id)sender;
 
