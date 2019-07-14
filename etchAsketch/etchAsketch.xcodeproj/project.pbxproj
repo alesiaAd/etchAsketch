@@ -14,6 +14,7 @@
 		7A07828322D9F8220046B0B5 /* CoordinatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatingController.m */; };
 		7A07828B22DA944B0046B0B5 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828A22DA944B0046B0B5 /* Vertex.m */; };
 		7A07829222DAB5410046B0B5 /* UINavigationBar+EatchASketch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07829122DAB5410046B0B5 /* UINavigationBar+EatchASketch.m */; };
+		7A07829522DB48B60046B0B5 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07829322DB48B50046B0B5 /* EditViewController.m */; };
 		F8A01B3E22DA39E000775C92 /* ImagesComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */; };
 		F8A01B5722DA70E900775C92 /* KnobGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B4D22DA70E800775C92 /* KnobGestureRecognizer.m */; };
 		F8A01B5822DA70E900775C92 /* Drawings.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B4E22DA70E800775C92 /* Drawings.m */; };
@@ -27,7 +28,6 @@
 		F8AB677B22D92AC000C9D954 /* etchAsketchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB677A22D92AC000C9D954 /* etchAsketchTests.m */; };
 		F8AB678622D92AC000C9D954 /* etchAsketchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB678522D92AC000C9D954 /* etchAsketchUITests.m */; };
 		F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679422D9509400C9D954 /* GalleryViewController.m */; };
-		F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679722D950CF00C9D954 /* EditViewController.m */; };
 		F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679B22D9AE7000C9D954 /* PagesChildViewController.m */; };
 		F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB679E22D9AE8400C9D954 /* PagesViewController.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +64,8 @@
 		7A07828A22DA944B0046B0B5 /* Vertex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
 		7A07829022DAB5410046B0B5 /* UINavigationBar+EatchASketch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+EatchASketch.h"; sourceTree = "<group>"; };
 		7A07829122DAB5410046B0B5 /* UINavigationBar+EatchASketch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+EatchASketch.m"; sourceTree = "<group>"; };
+		7A07829322DB48B50046B0B5 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		7A07829422DB48B60046B0B5 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesComparator.m; sourceTree = "<group>"; };
 		F8A01B3D22DA39DF00775C92 /* ImagesComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesComparator.h; sourceTree = "<group>"; };
 		F8A01B4D22DA70E800775C92 /* KnobGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnobGestureRecognizer.m; sourceTree = "<group>"; };
@@ -92,8 +94,6 @@
 		F8AB678722D92AC000C9D954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8AB679322D9509400C9D954 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
 		F8AB679422D9509400C9D954 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
-		F8AB679622D950CF00C9D954 /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
-		F8AB679722D950CF00C9D954 /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		F8AB679A22D9AE7000C9D954 /* PagesChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesChildViewController.h; sourceTree = "<group>"; };
 		F8AB679B22D9AE7000C9D954 /* PagesChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagesChildViewController.m; sourceTree = "<group>"; };
 		F8AB679D22D9AE8400C9D954 /* PagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 				F8AB676522D92ABD00C9D954 /* MenuViewController.m */,
 				F8AB679322D9509400C9D954 /* GalleryViewController.h */,
 				F8AB679422D9509400C9D954 /* GalleryViewController.m */,
-				F8AB679622D950CF00C9D954 /* EditViewController.h */,
-				F8AB679722D950CF00C9D954 /* EditViewController.m */,
+				7A07829422DB48B60046B0B5 /* EditViewController.h */,
+				7A07829322DB48B50046B0B5 /* EditViewController.m */,
 			);
 			path = MenuViewController;
 			sourceTree = "<group>";
@@ -415,6 +415,7 @@
 				F8A01B5822DA70E900775C92 /* Drawings.m in Sources */,
 				F8A01B5922DA70E900775C92 /* DrawingData.m in Sources */,
 				F8AB679522D9509400C9D954 /* GalleryViewController.m in Sources */,
+				7A07829522DB48B60046B0B5 /* EditViewController.m in Sources */,
 				7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */,
 				7A07827D22D9F74E0046B0B5 /* Paint.m in Sources */,
 				F8AB679F22D9AE8400C9D954 /* PagesViewController.m in Sources */,
@@ -422,7 +423,6 @@
 				7A07827822D9F53F0046B0B5 /* CanvasViewController.m in Sources */,
 				F8AB677122D92ABF00C9D954 /* main.m in Sources */,
 				F8AB676322D92ABD00C9D954 /* AppDelegate.m in Sources */,
-				F8AB679822D950CF00C9D954 /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

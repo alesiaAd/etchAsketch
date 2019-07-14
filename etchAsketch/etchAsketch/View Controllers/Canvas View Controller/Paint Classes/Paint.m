@@ -8,17 +8,21 @@
 
 #import "Paint.h"
 
+
+
 @implementation Paint
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if((self = [super init])) {
         _path = [decoder decodeObjectForKey:@"path"];
+        _thumbnail = [decoder decodeObjectForKey:@"thumbnail"];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.path forKey:@"path"];
+    [encoder encodeObject:self.thumbnail forKey:@"thumbnail"];
 }
 
 - (instancetype)init {
@@ -27,6 +31,7 @@
     }
     return self;
 }
+
 
 + (BOOL)supportsSecureCoding {
     return YES;

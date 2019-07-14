@@ -7,6 +7,8 @@
 //
 
 #import "Drawings.h"
+#import "Paint.h"
+
 
 static NSString * drawingsKey = @"drawings";
 
@@ -23,24 +25,30 @@ static NSString * drawingsKey = @"drawings";
 }
 
 - (void) loadData {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *arrayOfencodedObjects = [defaults objectForKey:drawingsKey];
+    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSString *directoryPath = [documentsURL.absoluteString stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+    NSString *filePath = [directoryPath stringByAppendingPathComponent:@"eatchAsketch/library.eas"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:filePath];
+    NSData *dataArray = [fileHandle readDataToEndOfFile];
+    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:dataArray error:nil];
     self.drawings = [NSMutableArray new];
-    for (NSData *encodedObject in arrayOfencodedObjects) {
-        DrawingData * decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    for (NSData *encodedObject in arrayOfEncodedObjects) {
+        Paint *decodedObject = [NSKeyedUnarchiver unarchivedObjectOfClass:[Paint class] fromData:encodedObject error:nil];
         [self.drawings addObject:decodedObject];
     }
 }
 
 - (void) saveData {
     NSMutableArray *encodedDrawings = [NSMutableArray new];
-    for(DrawingData *drawing in self.drawings) {
+    for(Paint *drawing in self.drawings) {
         NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:drawing requiringSecureCoding:NO error:nil];
         [encodedDrawings addObject:encodedObject];
     }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:encodedDrawings forKey:drawingsKey];
-    [defaults synchronize];
+    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:encodedDrawings requiringSecureCoding:NO error:nil];
+    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSString *directoryPath = [documentsURL.absoluteString stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+    NSString *filePath = [directoryPath stringByAppendingPathComponent:@"eatchAsketch/library.eas"];
+    [[NSFileManager defaultManager] createFileAtPath:filePath contents:arrayData attributes:nil];
 }
 
 @end

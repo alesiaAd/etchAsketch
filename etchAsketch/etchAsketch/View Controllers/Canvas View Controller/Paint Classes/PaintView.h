@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PaintView : UIView
 
 @property (nonatomic, strong) Paint *paint;
-
+- (void)createThumbnailForPaint;
 @end
 
 NS_ASSUME_NONNULL_END
