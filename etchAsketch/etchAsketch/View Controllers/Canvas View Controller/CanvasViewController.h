@@ -10,6 +10,8 @@
 #import "DrawingData.h"
 
 @class PaintView;
+@class Paint;
+
 @interface CanvasViewController : UIViewController <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet PaintView *canvasView;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
@@ -22,7 +24,7 @@
 - (IBAction)randomValueDidPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
-@property (nonatomic, strong) DrawingData *drawingData;
+@property (nonatomic, strong) Paint *drawingData;
 
 @end
 

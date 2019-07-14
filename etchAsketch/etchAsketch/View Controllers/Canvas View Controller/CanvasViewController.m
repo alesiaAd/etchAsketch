@@ -52,6 +52,8 @@
     self.canvasView.paint = [Paint new];
     [self.canvasView.paint addVertexToPath: vertex];
     [self.canvasView setNeedsDisplay];
+    
+    self.drawingData = [Paint new];
 }
 
 - (IBAction)showMenu:(id)sender {
@@ -60,6 +62,8 @@
 }
 
 - (void)saveButtonPressed {
+    [self.canvasView createThumbnailForPaint];
+    self.drawingData.thumbnail = self.canvasView.paint.thumbnail;
     [[Drawings sharedInstance].drawings addObject:self.drawingData];
     [[Drawings sharedInstance] saveData];
 }
@@ -86,8 +90,10 @@
     _viewR.layer.backgroundColor = UIColor.blueColor.CGColor;
     _viewL.layer.backgroundColor = UIColor.redColor.CGColor;
     
-
     //CGPoint p1 = CGPointMake(_knobControl.value, 50);
+    
+//    CGRect frame = CGRectMake(_viewR.frame.origin.x, _viewL.frame.origin.y, 10, 10);
+    
     
     [_canvasView addSubview:_viewR];
     [_viewR addSubview:_viewL];
@@ -98,6 +104,7 @@
     vertex.color = [UIColor greenColor];
     vertex.size = CGSizeMake(10, 10);
     [self.canvasView.paint addVertexToPath:vertex];
+    [self.drawingData.path addObject:vertex];
     [self.canvasView setNeedsDisplay];
 }
 

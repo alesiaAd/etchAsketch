@@ -24,10 +24,10 @@ static NSString * drawingsKey = @"drawings";
     return sharedInstance;
 }
 
-- (void) loadData {
+- (void)loadData {
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString *directoryPath = [documentsURL.absoluteString stringByReplacingOccurrencesOfString:@"file://" withString:@""];
-    NSString *filePath = [directoryPath stringByAppendingPathComponent:@"eatchAsketch/library.eas"];
+    NSString *filePath = [directoryPath stringByAppendingPathComponent:@"library.eas"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     NSData *dataArray = [fileHandle readDataToEndOfFile];
     NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:dataArray error:nil];
@@ -38,7 +38,7 @@ static NSString * drawingsKey = @"drawings";
     }
 }
 
-- (void) saveData {
+- (void)saveData {
     NSMutableArray *encodedDrawings = [NSMutableArray new];
     for(Paint *drawing in self.drawings) {
         NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:drawing requiringSecureCoding:NO error:nil];
@@ -47,8 +47,9 @@ static NSString * drawingsKey = @"drawings";
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:encodedDrawings requiringSecureCoding:NO error:nil];
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString *directoryPath = [documentsURL.absoluteString stringByReplacingOccurrencesOfString:@"file://" withString:@""];
-    NSString *filePath = [directoryPath stringByAppendingPathComponent:@"eatchAsketch/library.eas"];
-    [[NSFileManager defaultManager] createFileAtPath:filePath contents:arrayData attributes:nil];
+    NSString *filePath = [directoryPath stringByAppendingPathComponent:@"library.eas"];
+    
+    BOOL result = [[NSFileManager defaultManager] createFileAtPath:filePath contents:arrayData attributes:nil];
 }
 
 @end
