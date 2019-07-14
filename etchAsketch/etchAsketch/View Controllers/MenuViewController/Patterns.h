@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import <UIKit/UIKit.h>
 
 @interface Patterns : NSObject
 
-@end
+@property (nonatomic, strong) NSMutableArray *patterns;
 
-NS_ASSUME_NONNULL_END
++ (instancetype)sharedInstance;
+
+@end

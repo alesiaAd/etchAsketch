@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface GalleryViewController : UIViewController
+
+@property (nonatomic, strong) NSArray *galleryArray;
 
 @end
 
-NS_ASSUME_NONNULL_END
