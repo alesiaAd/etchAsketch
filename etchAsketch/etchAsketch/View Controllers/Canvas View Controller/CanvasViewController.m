@@ -79,6 +79,7 @@
                        context:(void *)context
 {
 
+    
     self.knobControl.maximumValue = self.canvasView.frame.size.height;
     self.knobControlX.maximumValue = self.canvasView.frame.size.width;
     NSLog(@"%f, %f",self.knobControl.maximumValue,self.knobControlX.maximumValue);
@@ -93,5 +94,16 @@
     [self.canvasView setNeedsDisplay];
 }
 
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    if (motion == UIEventSubtypeMotionShake) {
+        NSLog(@"begin shake");
+    }
+}
+
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    if (motion == UIEventSubtypeMotionShake) {
+         NSLog(@"end shake");
+    }
+}
 
 @end
