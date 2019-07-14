@@ -13,6 +13,7 @@
 		7A07828022D9F79E0046B0B5 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07827F22D9F79E0046B0B5 /* PaintView.m */; };
 		7A07828322D9F8220046B0B5 /* CoordinatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828222D9F8220046B0B5 /* CoordinatingController.m */; };
 		7A07828B22DA944B0046B0B5 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07828A22DA944B0046B0B5 /* Vertex.m */; };
+		7A07829222DAB5410046B0B5 /* UINavigationBar+EatchASketch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07829122DAB5410046B0B5 /* UINavigationBar+EatchASketch.m */; };
 		F8A01B3E22DA39E000775C92 /* ImagesComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */; };
 		F8A01B5722DA70E900775C92 /* KnobGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B4D22DA70E800775C92 /* KnobGestureRecognizer.m */; };
 		F8A01B5822DA70E900775C92 /* Drawings.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A01B4E22DA70E800775C92 /* Drawings.m */; };
@@ -61,6 +62,8 @@
 		7A07828622DA59280046B0B5 /* CoordinatingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatingDelegate.h; sourceTree = "<group>"; };
 		7A07828922DA944B0046B0B5 /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		7A07828A22DA944B0046B0B5 /* Vertex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
+		7A07829022DAB5410046B0B5 /* UINavigationBar+EatchASketch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+EatchASketch.h"; sourceTree = "<group>"; };
+		7A07829122DAB5410046B0B5 /* UINavigationBar+EatchASketch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+EatchASketch.m"; sourceTree = "<group>"; };
 		F8A01B3C22DA39DF00775C92 /* ImagesComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesComparator.m; sourceTree = "<group>"; };
 		F8A01B3D22DA39DF00775C92 /* ImagesComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesComparator.h; sourceTree = "<group>"; };
 		F8A01B4D22DA70E800775C92 /* KnobGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnobGestureRecognizer.m; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 				7A07827A22D9F54E0046B0B5 /* Canvas View Controller */,
 				F8AB679922D9ADEF00C9D954 /* PageViewController */,
 				7A07827422D9F4EB0046B0B5 /* MenuViewController */,
+				7A07828F22DAB4CA0046B0B5 /* UINavigationBar */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -188,6 +192,15 @@
 				7A07827F22D9F79E0046B0B5 /* PaintView.m */,
 			);
 			path = "Paint Classes";
+			sourceTree = "<group>";
+		};
+		7A07828F22DAB4CA0046B0B5 /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				7A07829022DAB5410046B0B5 /* UINavigationBar+EatchASketch.h */,
+				7A07829122DAB5410046B0B5 /* UINavigationBar+EatchASketch.m */,
+			);
+			path = UINavigationBar;
 			sourceTree = "<group>";
 		};
 		F8A01B3F22DA39EF00775C92 /* ImagesComparator */ = {
@@ -396,6 +409,7 @@
 				F8A01B5A22DA70E900775C92 /* KnobRender.m in Sources */,
 				F8A01B5722DA70E900775C92 /* KnobGestureRecognizer.m in Sources */,
 				F8AB679C22D9AE7000C9D954 /* PagesChildViewController.m in Sources */,
+				7A07829222DAB5410046B0B5 /* UINavigationBar+EatchASketch.m in Sources */,
 				F8AB676622D92ABD00C9D954 /* MenuViewController.m in Sources */,
 				F8A01B5B22DA70E900775C92 /* KnobView.m in Sources */,
 				F8A01B5822DA70E900775C92 /* Drawings.m in Sources */,

@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor grayColor];
     UIStackView *stackView = [UIStackView new];
     [self.view addSubview:stackView];
     stackView.translatesAutoresizingMaskIntoConstraints = NO;

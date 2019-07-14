@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoordinatingController.h"
+#import "UINavigationBar+EatchASketch.h"
 #import "Drawings.h"
 
 @interface AppDelegate ()
@@ -22,6 +23,7 @@
     [self.window makeKeyAndVisible];
     CoordinatingController *coordinatingController = [CoordinatingController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coordinatingController];
+    [navigationController.navigationBar configureNavigationBarForEatchASketch];
     self.window.rootViewController = navigationController;
     [[Drawings sharedInstance] loadData];
     return YES;

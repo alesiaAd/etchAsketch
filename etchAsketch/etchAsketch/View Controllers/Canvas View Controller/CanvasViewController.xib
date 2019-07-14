@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,53 +22,92 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-8x-iAy" customClass="PaintView">
-                    <rect key="frame" x="210" y="42" width="527" height="308"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58o-b6-VPL" customClass="KnobView">
-                    <rect key="frame" x="760" y="144" width="108" height="104"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58o-b6-VPL" customClass="KnobView">
+                    <rect key="frame" x="575" y="135.5" width="108" height="104"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="58o-b6-VPL" secondAttribute="height" multiplier="27:26" id="HiJ-Kv-pWl"/>
+                    </constraints>
                     <connections>
                         <action selector="randomValueDidPressed:" destination="-1" eventType="valueChanged" id="xra-d9-ik4"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B71-QB-vJk" customClass="KnobView">
-                    <rect key="frame" x="64" y="144" width="108" height="104"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B71-QB-vJk" customClass="KnobView">
+                    <rect key="frame" x="20" y="135.5" width="108" height="104"/>
                     <color key="backgroundColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="B71-QB-vJk" secondAttribute="height" multiplier="27:26" id="pNL-hc-XDy"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="voX-gn-YO5"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45p-2T-GrR">
-                    <rect key="frame" x="771" y="42" width="97" height="44"/>
+                    <rect key="frame" x="0.0" y="20" width="97" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="97" id="7sT-aX-Nbl"/>
-                        <constraint firstAttribute="height" constant="44" id="VHr-uk-IOR"/>
+                        <constraint firstAttribute="width" constant="97" id="k1Z-c3-9OA"/>
+                        <constraint firstAttribute="height" constant="44" id="ydK-Gy-WFC"/>
                     </constraints>
-                    <state key="normal" title="Save"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" name="YellowText"/>
+                    </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq8-rm-dlm">
-                    <rect key="frame" x="68" y="42" width="39" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq8-rm-dlm">
+                    <rect key="frame" x="554" y="20" width="63" height="37"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
                     <state key="normal" title="menu">
-                        <color key="titleColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" name="YellowText"/>
                     </state>
                     <connections>
                         <action selector="showMenu:" destination="-1" eventType="touchUpInside" id="Uv6-d7-mlc"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scratch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="zFv-oe-1Ms">
+                    <rect key="frame" x="259" y="20" width="149" height="47.5"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="36"/>
+                    <color key="textColor" name="YellowText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-8x-iAy" customClass="PaintView">
+                    <rect key="frame" x="141" y="79.5" width="386" height="275.5"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="xLa-8x-iAy" secondAttribute="height" multiplier="7:5" id="fWg-cE-KBo"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="RedBackground"/>
             <constraints>
-                <constraint firstItem="45p-2T-GrR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="42" id="cMG-zq-Pa2"/>
-                <constraint firstItem="45p-2T-GrR" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="16" id="mqc-oI-99y"/>
+                <constraint firstItem="58o-b6-VPL" firstAttribute="leading" secondItem="xLa-8x-iAy" secondAttribute="trailing" priority="750" constant="48" id="2qg-4P-fcO"/>
+                <constraint firstItem="45p-2T-GrR" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="71K-7z-NkT"/>
+                <constraint firstItem="58o-b6-VPL" firstAttribute="width" secondItem="B71-QB-vJk" secondAttribute="width" id="8g9-dr-fz0"/>
+                <constraint firstItem="B71-QB-vJk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="9PS-MH-MAw"/>
+                <constraint firstItem="58o-b6-VPL" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="16" id="Crh-Em-M9y"/>
+                <constraint firstItem="58o-b6-VPL" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="DoG-Xp-N98"/>
+                <constraint firstItem="xLa-8x-iAy" firstAttribute="leading" secondItem="B71-QB-vJk" secondAttribute="trailing" constant="13" id="Gn6-Qo-a8d"/>
+                <constraint firstItem="kq8-rm-dlm" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="-50" id="IKr-QO-DNe"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="xLa-8x-iAy" secondAttribute="bottom" constant="20" id="Ork-5z-m9q"/>
+                <constraint firstItem="zFv-oe-1Ms" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="Qev-M0-0MV"/>
+                <constraint firstItem="zFv-oe-1Ms" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="UT6-ze-277"/>
+                <constraint firstItem="45p-2T-GrR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="cPT-6Z-PkF"/>
+                <constraint firstItem="B71-QB-vJk" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="cgp-9M-gcK"/>
+                <constraint firstItem="xLa-8x-iAy" firstAttribute="top" secondItem="zFv-oe-1Ms" secondAttribute="bottom" constant="12" id="ibD-5o-dJT"/>
+                <constraint firstItem="kq8-rm-dlm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="rdE-3e-KES"/>
+                <constraint firstItem="kq8-rm-dlm" firstAttribute="leading" secondItem="xLa-8x-iAy" secondAttribute="trailing" constant="27" id="ro5-9O-gXv"/>
+                <constraint firstItem="58o-b6-VPL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xLa-8x-iAy" secondAttribute="trailing" constant="84" id="scP-nR-hvH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.61607142857142" y="130.43478260869566"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="RedBackground">
+            <color red="0.69411764705882351" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="YellowText">
+            <color red="0.8901960784313725" green="0.92941176470588238" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

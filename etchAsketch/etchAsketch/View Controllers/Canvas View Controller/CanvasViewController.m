@@ -55,6 +55,7 @@
 }
 
 - (IBAction)showMenu:(id)sender {
+    self.navigationController.navigationBarHidden = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
