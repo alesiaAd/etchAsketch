@@ -54,11 +54,21 @@
     [self.canvasView setNeedsDisplay];
     
     self.drawingData = [Paint new];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.backgroundPaint.path) {
+        [self.canvasView setNeedsDisplay];
+    }
     self.backgroungImageView.image = self.backgroundPaint.imageFullSize;
     if (self.backgroungImageView.image) {
         self.canvasView.backgroundColor = [UIColor clearColor];
     }
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    self.canvasView.paint.path = @[].mutableCopy;
+    self.backgroungImageView.image = nil;
+    [self.canvasView setNeedsDisplay];
 }
 
 - (IBAction)showMenu:(id)sender {
@@ -67,10 +77,18 @@
 }
 
 - (void)saveButtonPressed {
-    [self.canvasView createThumbnailForPaint];
+    [self createViewsScreenShot];
     self.drawingData.imageFullSize = self.canvasView.paint.imageFullSize;
     [[Drawings sharedInstance].drawings addObject:self.drawingData];
     [[Drawings sharedInstance] saveData];
+}
+
+- (void)createViewsScreenShot {
+    UIGraphicsBeginImageContextWithOptions(self.canvasView.frame.size, NO, [UIScreen mainScreen].scale);
+    [self.backgroungImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [self.canvasView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    self.canvasView.paint.imageFullSize = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 }
 
 - (void)didReceiveMemoryWarning {

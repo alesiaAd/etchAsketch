@@ -40,6 +40,9 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
     [self.collectionView registerClass:GalleryCollectionViewCell.class forCellWithReuseIdentifier:cellIdentifier];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.collectionView reloadData];
+}
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     GalleryCollectionViewCell *cell = (GalleryCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];

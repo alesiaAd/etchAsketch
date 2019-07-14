@@ -112,6 +112,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)showGalleryViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
+    [[Drawings sharedInstance] loadData];
     self.galleryViewController.galleryArray = [Drawings sharedInstance].drawings;
     [self.navigationController pushViewController:self.galleryViewController animated:YES];
 }

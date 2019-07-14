@@ -25,7 +25,6 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coordinatingController];
     [navigationController.navigationBar configureNavigationBarForEatchASketch];
     self.window.rootViewController = navigationController;
-    [[Drawings sharedInstance] loadData];
     return YES;
 }
 
