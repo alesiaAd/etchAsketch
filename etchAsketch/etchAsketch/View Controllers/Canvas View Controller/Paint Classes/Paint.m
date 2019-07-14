@@ -21,6 +21,13 @@
     [encoder encodeObject:self.path forKey:@"path"];
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _path = [NSMutableArray array];
+    }
+    return self;
+}
+
 + (BOOL)supportsSecureCoding {
     return YES;
 }

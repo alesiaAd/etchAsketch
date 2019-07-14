@@ -11,6 +11,8 @@
 #import "KnobGestureRecognizer.h"
 #import "KnobRender.h"
 #import "Drawings.h"
+#import "PaintView.h"
+#import "Paint.h"
 
 @interface CanvasViewController (){
     KnobView *_knobControl;
@@ -43,7 +45,15 @@
     _viewR = [[UIView alloc] init];
     _viewL = [[UIView alloc] init];
     [self.saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents: UIControlEventTouchUpInside];
+    Vertex *vertex = [Vertex new];
+    CGPoint translation = CGPointMake(250, 250);
+    vertex.location = translation;
+    vertex.color = [UIColor greenColor];
+    self.canvasView.paint = [Paint new];
+    [self.canvasView.paint addVertexToPath: vertex];
+    [self.canvasView setNeedsDisplay];
 }
+
 - (IBAction)showMenu:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -80,8 +90,14 @@
     
     [_canvasView addSubview:_viewR];
     [_viewR addSubview:_viewL];
-
-
+    
+    Vertex *vertex = [Vertex new];
+    CGPoint translation = CGPointMake(_knobControlTwo.value, _knobControl.value);
+    vertex.location = translation;
+    vertex.color = [UIColor greenColor];
+    vertex.size = CGSizeMake(10, 10);
+    [self.canvasView.paint addVertexToPath:vertex];
+    [self.canvasView setNeedsDisplay];
 }
 
 

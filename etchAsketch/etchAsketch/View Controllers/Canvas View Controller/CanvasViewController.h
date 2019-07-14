@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DrawingData.h"
 
+@class PaintView;
 @interface CanvasViewController : UIViewController <UIGestureRecognizerDelegate>
-@property (weak, nonatomic) IBOutlet UIView *canvasView;
+@property (weak, nonatomic) IBOutlet PaintView *canvasView;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;
 @property (strong,nonatomic) NSArray *array;

@@ -13,8 +13,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@protocol  MarkProtocol;
-
 
 @interface Paint : NSObject <NSCoding, NSSecureCoding>
 
@@ -28,21 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
-@protocol MarkProtocol <NSObject>
-@optional
-@property (nonatomic, strong) UIColor *color;
-@property (nonatomic, assign) CGSize size;
-@property (nonatomic, assign) CGPoint location;
-@property (nonatomic, assign) NSInteger count;
-
-- (void)addMark:(id <MarkProtocol>)mark;
-- (void)removeMark:(id <MarkProtocol>)mark;
-- (id <MarkProtocol>)childAtIndex:(NSInteger)index;
-- (id <MarkProtocol>)lastChild;
-
-
-@end
 
 
 NS_ASSUME_NONNULL_END

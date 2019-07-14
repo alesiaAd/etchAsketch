@@ -15,9 +15,13 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, 0, 0);
     for (Vertex *vertex in self.paint.path) {
         [vertex drawWithContext:context];
     }
+    CGContextDrawPath(context, kCGPathStroke);
+    CGContextSetLineCap(context, kCGLineCapSquare);
 }
 
 @end
