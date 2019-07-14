@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Paint.h"
 
 @interface Patterns : NSObject
 
-@property (nonatomic, strong) NSMutableArray *patterns;
+@property (nonatomic, strong) NSMutableArray <Paint *> *patterns;
 
 + (instancetype)sharedInstance;
 

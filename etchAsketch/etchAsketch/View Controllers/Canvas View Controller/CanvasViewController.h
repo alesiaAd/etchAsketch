@@ -13,6 +13,8 @@
 @class Paint;
 
 @interface CanvasViewController : UIViewController <UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *backgroungImageView;
+@property (nonatomic, strong) Paint *backgroundPaint;
 @property (weak, nonatomic) IBOutlet PaintView *canvasView;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;

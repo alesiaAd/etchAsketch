@@ -12,7 +12,7 @@
 #import "GalleryViewController.h"
 #import "CanvasViewController.h"
 #import "Patterns.h"
-
+#import "Drawings.h"
 
 static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
@@ -40,6 +40,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
         _galleryViewController = [GalleryViewController new];
         _galleryViewController.coordinatingDelegate = self;
         _patternsViewController = [GalleryViewController new];
+        _patternsViewController.coordinatingDelegate = self;
         _canvasViewController = [CanvasViewController new];
     }
     return self;
@@ -111,7 +112,8 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)showGalleryViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
-     [self.navigationController pushViewController:self.galleryViewController animated:YES];
+    self.galleryViewController.galleryArray = [Drawings sharedInstance].drawings;
+    [self.navigationController pushViewController:self.galleryViewController animated:YES];
 }
 
 - (void)showPatternsViewControllerWithCompletion:(nonnull CompletionHandler)handler {
@@ -133,8 +135,9 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 }
 
 - (void)showCanvasViewControllerWithSketch:(Paint *)sketch {
-//    self.canvasViewController.canvasView
-    [self showCanvasViewController];
+    self.navigationController.navigationBarHidden = YES;
+    self.canvasViewController.backgroundPaint = sketch;
+    [self.navigationController pushViewController:self.canvasViewController animated:YES];
 }
 
 - (void)swowCanvasViewControllerAndApplyDrawingSettings:(DrawingSettings *)settings {

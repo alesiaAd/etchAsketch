@@ -25,7 +25,9 @@
     if (self) {
         self.patterns = [NSMutableArray new];
         for (int i = 1; i <=7; i++) {
-            [self.patterns addObject:[UIImage imageNamed:[NSString stringWithFormat:@"Pattern%d", i]]];
+            Paint *paint = [Paint new];
+            paint.imageFullSize = [UIImage imageNamed:[NSString stringWithFormat:@"Pattern%d", i]];
+            [self.patterns addObject:paint];
         }
     }
     return self;

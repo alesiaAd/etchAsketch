@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CoordinatingDelegate.h"
+#import "Paint.h"
 
 @interface GalleryViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *galleryArray;
-@property (nonatomic, weak) id<CoordinatingDelegate> coordinatingDelegate;
+@property (nonatomic, strong) NSArray <Paint *> *galleryArray;
+@property (nonatomic, weak) id <CoordinatingDelegate> coordinatingDelegate;
 @end
 
