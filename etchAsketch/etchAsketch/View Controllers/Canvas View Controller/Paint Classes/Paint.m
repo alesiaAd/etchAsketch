@@ -14,10 +14,8 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if((self = [super init])) {
-//        _path = [decoder decodeObjectForKey:@"path"];
-        _path = [decoder decodeObjectOfClass:NSMutableArray.class forKey:@"path"];
-//        _imageFullSize = [decoder decodeObjectForKey:@"thumbnail"];
-        _imageFullSize = [decoder decodeObjectOfClass:UIImage.class forKey:@"imageFullSize"];
+        _path = [decoder decodeObjectForKey:@"path"];
+        _imageFullSize = [decoder decodeObjectForKey:@"imageFullSize"];
     }
     return self;
 }

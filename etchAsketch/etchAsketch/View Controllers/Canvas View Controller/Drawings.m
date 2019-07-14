@@ -30,12 +30,10 @@ static NSString * drawingsKey = @"drawings";
     NSString *filePath = [directoryPath stringByAppendingPathComponent:@"library.eas"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     NSData *dataArray = [fileHandle readDataToEndOfFile];
-//    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchiveObjectWithData:dataArray]; //works
-    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchivedObjectOfClass:NSMutableArray.class fromData:dataArray error:nil];
+    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchiveObjectWithData:dataArray];
     self.drawings = [NSMutableArray new];
     for (NSData *encodedObject in arrayOfEncodedObjects) {
-//        Paint *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-        Paint *decodedObject = [NSKeyedUnarchiver unarchivedObjectOfClass:Paint.class fromData:encodedObject error:nil];
+        Paint *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         [self.drawings addObject:decodedObject];
     }
 }
