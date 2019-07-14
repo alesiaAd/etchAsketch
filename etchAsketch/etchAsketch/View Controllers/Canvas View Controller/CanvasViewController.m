@@ -7,52 +7,41 @@
 //
 
 #import "CanvasViewController.h"
-#import "KnobView.h"
 #import "KnobGestureRecognizer.h"
 #import "KnobRender.h"
 #import "Drawings.h"
 #import "PaintView.h"
 #import "Paint.h"
 
-@interface CanvasViewController (){
-    KnobView *_knobControl;
-    KnobView *_knobControlTwo;
-}
-
-@end
 @implementation CanvasViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _knobControl = [[KnobView alloc] initWithFrame:self.knobPlaceHolderY.bounds];
-    [self.knobPlaceHolderY addSubview:_knobControl];
+    self.knobControl = [[KnobView alloc] initWithFrame:self.knobPlaceHolderY.bounds];
+    self.knobControlX = [[KnobView alloc] initWithFrame:self.knobPlaceHolderX.bounds];
+    [self.knobPlaceHolderY addSubview:self.knobControl];
+    [self.knobPlaceHolderX addSubview:self.knobControlX];
+ 
     
-    _knobControlTwo = [[KnobView alloc] initWithFrame:self.knobPlaceHolderX.bounds];
-    [self.knobPlaceHolderX addSubview:_knobControlTwo];
+    self.knobControl.lineWidth = 10.0;
+    self.knobControl.pointerLength = 12.0;
+    self.knobControlX.lineWidth = 10.0;
+    self.knobControlX.pointerLength = 12.0;
+    self.knobPlaceHolderX.layer.cornerRadius = self.knobPlaceHolderX.frame.size.height / 2;
+    self.knobPlaceHolderY.layer.cornerRadius = self.knobPlaceHolderX.frame.size.height / 2;
     
+    self.view.tintColor = [UIColor lightGrayColor];
+    [self.knobControl addObserver:self forKeyPath:@"value" options:0 context:NULL];
+    [self.knobControlX addObserver:self forKeyPath:@"value" options:0 context:NULL];
+     self.knobControl.continuous = NO;
     
-    _knobControl.lineWidth = 4.0;
-    _knobControl.pointerLength = 4.0;
-    
-    
-    _knobControlTwo.lineWidth = 4.0;
-    _knobControlTwo.pointerLength = 4.0;
-//
-    self.view.tintColor = [UIColor redColor];
-    [_knobControl addObserver:self forKeyPath:@"value" options:0 context:NULL];
-    [_knobControlTwo addObserver:self forKeyPath:@"value" options:0 context:NULL];
-   // _knobControl.continuous = NO;
-    
-    _viewR = [[UIView alloc] init];
-    _viewL = [[UIView alloc] init];
     [self.saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents: UIControlEventTouchUpInside];
     Vertex *vertex = [Vertex new];
-    CGPoint translation = CGPointMake(250, 250);
-    vertex.location = translation;
-    vertex.color = [UIColor greenColor];
+    //CGPoint translation = CGPointMake(self.knobControlX.value,self.knobControl.value);
+    //vertex.location = translation;
+    //vertex.color = [UIColor blackColor];
     self.canvasView.paint = [Paint new];
     [self.canvasView.paint addVertexToPath: vertex];
     [self.canvasView setNeedsDisplay];
-    
     self.drawingData = [Paint new];
 }
 
@@ -73,10 +62,10 @@
 }
 
 - (IBAction)randomValueDidPressed:(id)sender {
-    for (NSInteger i = 0; i < 1000; i++){
-        [_knobControl setValue:i];
-        [_knobControlTwo setValue:i];
-    }
+    
+    CGFloat randomValue =  (arc4random() % 101) / 100.f;
+    [self.knobControl setValue:randomValue];
+    [self.knobControlX setValue:randomValue];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -85,24 +74,12 @@
                        context:(void *)context
 {
     NSLog(@"%f",_knobControl.value);
-    [_viewR setFrame:CGRectMake(_knobControlTwo.value, 0, 10, 10)];
-    [_viewL setFrame:CGRectMake(0, _knobControl.value, 10, 10)];
-    _viewR.layer.backgroundColor = UIColor.blueColor.CGColor;
-    _viewL.layer.backgroundColor = UIColor.redColor.CGColor;
-    
-    //CGPoint p1 = CGPointMake(_knobControl.value, 50);
-    
-//    CGRect frame = CGRectMake(_viewR.frame.origin.x, _viewL.frame.origin.y, 10, 10);
-    
-    
-    [_canvasView addSubview:_viewR];
-    [_viewR addSubview:_viewL];
-    
+
     Vertex *vertex = [Vertex new];
-    CGPoint translation = CGPointMake(_knobControlTwo.value, _knobControl.value);
+    CGPoint translation = CGPointMake(self.knobControlX.value,self.knobControl.value);
     vertex.location = translation;
-    vertex.color = [UIColor greenColor];
-    vertex.size = CGSizeMake(10, 10);
+    vertex.color = [UIColor blackColor];
+    vertex.size = CGSizeMake(5, 5);
     [self.canvasView.paint addVertexToPath:vertex];
     [self.drawingData.path addObject:vertex];
     [self.canvasView setNeedsDisplay];

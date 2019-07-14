@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KnobGestureRecognizer.h"
+#import "KnobRender.h"
 
 
 
@@ -16,13 +18,13 @@
 - (void)setValue:(CGFloat)value animated:(BOOL)animated;
 @property (nonatomic, assign) CGFloat minimumValue;
 @property (nonatomic, assign) CGFloat maximumValue;
-
-#pragma mark - Knob Behavior
 @property (nonatomic, assign, getter = isContinuous) BOOL continuous;
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat pointerLength;
+@property (nonatomic) KnobGestureRecognizer *gestureRecognizer;
+@property (nonatomic) KnobRender *knobRenderer;
 
 @end
 

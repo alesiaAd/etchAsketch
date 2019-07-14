@@ -30,7 +30,6 @@
     [self updateTouchAngleWithTouches:touches];
 }
 
-#pragma mark - Utility methods
 - (void)updateTouchAngleWithTouches:(NSSet *)touchs{
     UITouch *touch = [touchs anyObject];
     CGPoint touchPoint = [touch locationInView:self.view];
