@@ -38,6 +38,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
         _menuViewController = [MenuViewController new];
         _menuViewController.coordinatingDelegate = self;
         _galleryViewController = [GalleryViewController new];
+        _galleryViewController.coordinatingDelegate = self;
         _patternsViewController = [GalleryViewController new];
         _canvasViewController = [CanvasViewController new];
     }
@@ -132,7 +133,8 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 }
 
 - (void)showCanvasViewControllerWithSketch:(Paint *)sketch {
-    
+//    self.canvasViewController.canvasView
+    [self showCanvasViewController];
 }
 
 - (void)swowCanvasViewControllerAndApplyDrawingSettings:(DrawingSettings *)settings {

@@ -63,7 +63,7 @@
 
 - (void)saveButtonPressed {
     [self.canvasView createThumbnailForPaint];
-    self.drawingData.thumbnail = self.canvasView.paint.thumbnail;
+    self.drawingData.imageFullSize = self.canvasView.paint.imageFullSize;
     [[Drawings sharedInstance].drawings addObject:self.drawingData];
     [[Drawings sharedInstance] saveData];
 }

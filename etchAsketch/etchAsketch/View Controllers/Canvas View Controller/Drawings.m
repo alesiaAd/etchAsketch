@@ -48,8 +48,7 @@ static NSString * drawingsKey = @"drawings";
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString *directoryPath = [documentsURL.absoluteString stringByReplacingOccurrencesOfString:@"file://" withString:@""];
     NSString *filePath = [directoryPath stringByAppendingPathComponent:@"library.eas"];
-    
-    BOOL result = [[NSFileManager defaultManager] createFileAtPath:filePath contents:arrayData attributes:nil];
+    [[NSFileManager defaultManager] createFileAtPath:filePath contents:arrayData attributes:nil];
 }
 
 @end

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Paint : NSObject <NSCoding, NSSecureCoding>
 
 @property (nonatomic, strong) NSMutableArray<Vertex *> *path;
-@property (nonatomic, strong) UIImage *thumbnail;
+@property (nonatomic, strong) UIImage *imageFullSize;
 
 - (void)addVertexToPath:(Vertex *)vertex;
 - (void)removeLastVertex;

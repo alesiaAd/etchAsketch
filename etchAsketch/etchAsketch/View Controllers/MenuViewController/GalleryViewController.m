@@ -38,7 +38,9 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerClass:GalleryCollectionViewCell.class forCellWithReuseIdentifier:cellIdentifier];
+//    [self.coordinatingDelegate showCanvasViewControllerWithSketch:paint];
 }
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     GalleryCollectionViewCell *cell = (GalleryCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -55,5 +57,7 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(150, 150);
 }
+
+//- (void)
 
 @end
