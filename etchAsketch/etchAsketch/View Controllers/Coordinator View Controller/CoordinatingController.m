@@ -58,9 +58,11 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showMenu];
+   
     if (self.isFirstLaunch) {
         [self showPages];
+    } else {
+        [self showMenu];
     }
 
 }
@@ -132,6 +134,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
     [self.pagesViewController.view removeFromSuperview];
     [self.pagesViewController removeFromParentViewController];
     self.navigationItem.rightBarButtonItem = nil;
+    [self showMenu];
     [self.view setNeedsDisplay];
 }
 

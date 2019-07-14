@@ -21,6 +21,7 @@ const NSInteger pagesCount = 2;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.parentViewController.title = @"Tutorial";
     self.view.backgroundColor = [UIColor whiteColor];
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
@@ -57,7 +58,8 @@ const NSInteger pagesCount = 2;
     PagesChildViewController *childViewController = [[PagesChildViewController alloc] init];
     childViewController.index = index;
     if (index == pagesCount - 1) {
-        UIBarButtonItem *finishTutorial = [[UIBarButtonItem alloc] initWithTitle:@"Let's Sketch!" style:UIBarButtonItemStylePlain target:self.coordinatingDelegate action:@selector(hidePagesViewController)];
+        [self.parentViewController.navigationItem setHidesBackButton:YES animated:YES];
+        UIBarButtonItem *finishTutorial = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"cross exit button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self.coordinatingDelegate action:@selector(hidePagesViewController)];
         self.parentViewController.navigationItem.rightBarButtonItem = finishTutorial;
     }
     return childViewController;

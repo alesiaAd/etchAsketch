@@ -65,6 +65,7 @@
         self.canvasView.backgroundColor = [UIColor clearColor];
     }
 }
+
 - (void)viewWillDisappear:(BOOL)animated {
     self.canvasView.paint.path = @[].mutableCopy;
     self.backgroungImageView.image = nil;
