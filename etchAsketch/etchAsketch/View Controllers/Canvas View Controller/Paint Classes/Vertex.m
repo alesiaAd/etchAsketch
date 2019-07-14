@@ -12,9 +12,12 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if((self = [super init])) {
-        _color = [decoder decodeObjectForKey:@"color"];
-        _size = [[decoder decodeObjectForKey:@"size"] CGSizeValue];
-        _location = [[decoder decodeObjectForKey:@"location"] CGPointValue];
+//        _color = [decoder decodeObjectForKey:@"color"];
+        _color = [decoder decodeObjectOfClass:UIColor.class forKey:@"color"];
+//        _size = [[decoder decodeObjectForKey:@"size"] CGSizeValue];
+        _size = [[decoder decodeObjectOfClass:NSValue.class forKey:@"size"] CGSizeValue];
+//        _location = [[decoder decodeObjectForKey:@"location"] CGPointValue];
+        _location = [[decoder decodeObjectOfClass:NSValue.class forKey:@"location"] CGPointValue];
     }
     return self;
 }

@@ -30,10 +30,12 @@ static NSString * drawingsKey = @"drawings";
     NSString *filePath = [directoryPath stringByAppendingPathComponent:@"library.eas"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     NSData *dataArray = [fileHandle readDataToEndOfFile];
-    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:dataArray error:nil];
+//    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchiveObjectWithData:dataArray]; //works
+    NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchivedObjectOfClass:NSMutableArray.class fromData:dataArray error:nil];
     self.drawings = [NSMutableArray new];
     for (NSData *encodedObject in arrayOfEncodedObjects) {
-        Paint *decodedObject = [NSKeyedUnarchiver unarchivedObjectOfClass:[Paint class] fromData:encodedObject error:nil];
+//        Paint *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+        Paint *decodedObject = [NSKeyedUnarchiver unarchivedObjectOfClass:Paint.class fromData:encodedObject error:nil];
         [self.drawings addObject:decodedObject];
     }
 }
@@ -41,10 +43,10 @@ static NSString * drawingsKey = @"drawings";
 - (void)saveData {
     NSMutableArray *encodedDrawings = [NSMutableArray new];
     for(Paint *drawing in self.drawings) {
-        NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:drawing requiringSecureCoding:NO error:nil];
+        NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:drawing requiringSecureCoding:YES error:nil];
         [encodedDrawings addObject:encodedObject];
     }
-    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:encodedDrawings requiringSecureCoding:NO error:nil];
+    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:encodedDrawings requiringSecureCoding:YES error:nil];
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString *directoryPath = [documentsURL.absoluteString stringByReplacingOccurrencesOfString:@"file://" withString:@""];
     NSString *filePath = [directoryPath stringByAppendingPathComponent:@"library.eas"];

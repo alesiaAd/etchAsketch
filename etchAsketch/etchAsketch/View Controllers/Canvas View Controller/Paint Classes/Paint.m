@@ -14,15 +14,17 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if((self = [super init])) {
-        _path = [decoder decodeObjectForKey:@"path"];
-        _imageFullSize = [decoder decodeObjectForKey:@"thumbnail"];
+//        _path = [decoder decodeObjectForKey:@"path"];
+        _path = [decoder decodeObjectOfClass:NSMutableArray.class forKey:@"path"];
+//        _imageFullSize = [decoder decodeObjectForKey:@"thumbnail"];
+        _imageFullSize = [decoder decodeObjectOfClass:UIImage.class forKey:@"imageFullSize"];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.path forKey:@"path"];
-    [encoder encodeObject:self.imageFullSize forKey:@"thumbnail"];
+    [encoder encodeObject:self.imageFullSize forKey:@"imageFullSize"];
 }
 
 - (instancetype)init {
