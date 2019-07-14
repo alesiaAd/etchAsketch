@@ -57,10 +57,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if (self.backgroundPaint.path) {
+    if (self.backgroundPaint.path.count > 0) {
         [self.canvasView setNeedsDisplay];
+    } else {
+        self.backgroungImageView.backgroundColor = [UIColor whiteColor];
+        self.backgroungImageView.image = self.backgroundPaint.imageFullSize;
     }
-    self.backgroungImageView.image = self.backgroundPaint.imageFullSize;
     if (self.backgroungImageView.image) {
         self.canvasView.backgroundColor = [UIColor clearColor];
     }
@@ -68,7 +70,9 @@
 - (void)viewWillDisappear:(BOOL)animated {
     self.canvasView.paint.path = @[].mutableCopy;
     self.backgroungImageView.image = nil;
+    self.backgroundPaint.imageFullSize = [UIImage imageNamed:@""];
     [self.canvasView setNeedsDisplay];
+    [self.backgroungImageView setNeedsDisplay];
 }
 
 - (IBAction)showMenu:(id)sender {
