@@ -11,6 +11,7 @@
 #import "MenuViewController.h"
 #import "GalleryViewController.h"
 #import "CanvasViewController.h"
+#import "Patterns.h"
 
 
 static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
@@ -114,6 +115,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)showPatternsViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
+    self.patternsViewController.galleryArray = [Patterns sharedInstance].patterns;
     [self.navigationController pushViewController:self.patternsViewController animated:YES];
 }
 

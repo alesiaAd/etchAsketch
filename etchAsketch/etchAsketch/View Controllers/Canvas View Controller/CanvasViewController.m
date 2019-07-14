@@ -52,6 +52,8 @@
     self.canvasView.paint = [Paint new];
     [self.canvasView.paint addVertexToPath: vertex];
     [self.canvasView setNeedsDisplay];
+    
+    self.drawingData = [DrawingData new];
 }
 
 - (IBAction)showMenu:(id)sender {
@@ -86,8 +88,10 @@
     _viewR.layer.backgroundColor = UIColor.blueColor.CGColor;
     _viewL.layer.backgroundColor = UIColor.redColor.CGColor;
     
-
     //CGPoint p1 = CGPointMake(_knobControl.value, 50);
+    
+    CGRect frame = CGRectMake(_viewR.frame.origin.x, _viewL.frame.origin.y, 10, 10);
+    [self.drawingData.pixels addObject:[NSValue valueWithCGRect:frame]];
     
     [_canvasView addSubview:_viewR];
     [_viewR addSubview:_viewL];
