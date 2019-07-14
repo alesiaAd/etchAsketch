@@ -31,6 +31,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 @implementation CoordinatingController
 
 #pragma mark - Object Lifecycle
+
 - (instancetype)init {
     if (self = [super init]) {
         [self checkForFirstLaunch];
@@ -57,14 +58,11 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     if (self.isFirstLaunch) {
         [self showPages];
     } else {
         [self showMenu];
     }
-
-
 }
 
 #pragma mark -
@@ -136,10 +134,6 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
     [self.navigationController pushViewController:self.patternsViewController animated:NO];
 }
 
-//- (void)showMenuWithCompletion:(nonnull CompletionHandler)handler {
-//    [self showMenu];
-//}
-
 - (void)hidePagesViewController {
     [self.pagesViewController willMoveToParentViewController:nil];
     [self.pagesViewController.view removeFromSuperview];
@@ -153,7 +147,6 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
     self.navigationController.navigationBarHidden = YES;
     self.canvasViewController.backgroundPaint = sketch;
     [self showCanvasViewController];
-//    [self.navigationController pushViewController:self.canvasViewController animated:YES];
 }
 
 - (void)swowCanvasViewControllerAndApplyDrawingSettings:(DrawingSettings *)settings {
