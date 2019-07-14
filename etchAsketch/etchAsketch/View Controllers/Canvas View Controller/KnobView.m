@@ -7,7 +7,7 @@
 //
 
 #import "KnobView.h"
-
+#import "CanvasViewController.h"
 
 
 @implementation KnobView
@@ -15,8 +15,9 @@
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        
         _minimumValue = 0.0;
-        _maximumValue = 500.0;
+        _maximumValue = 500;
         _value = 0.0;
         _continuous = YES;
         _gestureRecognizer = [[KnobGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
