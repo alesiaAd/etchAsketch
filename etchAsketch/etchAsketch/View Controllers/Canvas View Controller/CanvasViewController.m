@@ -54,6 +54,11 @@
     [self.canvasView setNeedsDisplay];
     
     self.drawingData = [Paint new];
+    
+    self.backgroungImageView.image = self.backgroundPaint.imageFullSize;
+    if (self.backgroungImageView.image) {
+        self.canvasView.backgroundColor = [UIColor clearColor];
+    }
 }
 
 - (IBAction)showMenu:(id)sender {

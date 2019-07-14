@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CanvasViewController">
             <connections>
+                <outlet property="backgroungImageView" destination="8NM-PP-24d" id="z9W-aj-2MJ"/>
                 <outlet property="canvasView" destination="xLa-8x-iAy" id="uIE-RY-qgV"/>
                 <outlet property="knobPlaceHolderX" destination="B71-QB-vJk" id="gql-su-e1f"/>
                 <outlet property="knobPlaceHolderY" destination="58o-b6-VPL" id="75J-Mf-pjd"/>
@@ -70,6 +71,9 @@
                     <color key="textColor" name="YellowText"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-PP-24d">
+                    <rect key="frame" x="141" y="79.5" width="386" height="275.5"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-8x-iAy" customClass="PaintView">
                     <rect key="frame" x="141" y="79.5" width="386" height="275.5"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,6 +90,7 @@
                 <constraint firstItem="B71-QB-vJk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="9PS-MH-MAw"/>
                 <constraint firstItem="58o-b6-VPL" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="16" id="Crh-Em-M9y"/>
                 <constraint firstItem="58o-b6-VPL" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="DoG-Xp-N98"/>
+                <constraint firstItem="8NM-PP-24d" firstAttribute="height" secondItem="xLa-8x-iAy" secondAttribute="height" id="GaW-Rh-3Ik"/>
                 <constraint firstItem="xLa-8x-iAy" firstAttribute="leading" secondItem="B71-QB-vJk" secondAttribute="trailing" constant="13" id="Gn6-Qo-a8d"/>
                 <constraint firstItem="kq8-rm-dlm" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="-50" id="IKr-QO-DNe"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="xLa-8x-iAy" secondAttribute="bottom" constant="20" id="Ork-5z-m9q"/>
@@ -93,10 +98,13 @@
                 <constraint firstItem="zFv-oe-1Ms" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="UT6-ze-277"/>
                 <constraint firstItem="45p-2T-GrR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="cPT-6Z-PkF"/>
                 <constraint firstItem="B71-QB-vJk" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="cgp-9M-gcK"/>
+                <constraint firstItem="8NM-PP-24d" firstAttribute="width" secondItem="xLa-8x-iAy" secondAttribute="width" id="hcf-O0-jqO"/>
+                <constraint firstItem="8NM-PP-24d" firstAttribute="leading" secondItem="xLa-8x-iAy" secondAttribute="leading" id="hjs-tE-9bO"/>
                 <constraint firstItem="xLa-8x-iAy" firstAttribute="top" secondItem="zFv-oe-1Ms" secondAttribute="bottom" constant="12" id="ibD-5o-dJT"/>
                 <constraint firstItem="kq8-rm-dlm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="rdE-3e-KES"/>
                 <constraint firstItem="kq8-rm-dlm" firstAttribute="leading" secondItem="xLa-8x-iAy" secondAttribute="trailing" constant="27" id="ro5-9O-gXv"/>
                 <constraint firstItem="58o-b6-VPL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xLa-8x-iAy" secondAttribute="trailing" constant="84" id="scP-nR-hvH"/>
+                <constraint firstItem="8NM-PP-24d" firstAttribute="top" secondItem="xLa-8x-iAy" secondAttribute="top" id="ztd-Gw-6QT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.61607142857142" y="130.43478260869566"/>
