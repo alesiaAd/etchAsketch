@@ -88,6 +88,8 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)showMenu {
     self.title = @"Menu";
+    self.galleryViewController.title = @"Gallery";
+    self.patternsViewController.title = @"Patterns";
     [self addChildViewController:self.menuViewController];
     self.menuViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.menuViewController.view];
