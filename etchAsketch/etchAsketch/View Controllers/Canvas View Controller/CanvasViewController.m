@@ -21,6 +21,9 @@
     [self.knobPlaceHolderX addSubview:self.knobControlX];
     
     
+    self.viewR = [UIView new];
+    self.viewL = [UIView new];
+    
     self.knobControl.lineWidth = 10.0;
     self.knobControl.pointerLength = 12.0;
     self.knobControlX.lineWidth = 10.0;
@@ -114,7 +117,9 @@
 {
     self.knobControl.maximumValue = self.canvasView.frame.size.height;
     self.knobControlX.maximumValue = self.canvasView.frame.size.width;
-    NSLog(@"%f, %f",self.knobControl.maximumValue,self.knobControlX.maximumValue);
+  //  NSLog(@"%f, %f",self.knobControl.maximumValue,self.knobControlX.maximumValue);
+    
+    
     
     Vertex *vertex = [Vertex new];
     CGPoint translation = CGPointMake(self.knobControlX.value,self.knobControl.value);
@@ -128,6 +133,11 @@
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
         NSLog(@"begin shake");
+        self.canvasView.paint.path = @[].mutableCopy;
+        self.backgroungImageView.image = nil;
+        self.canvasView.paint.imageFullSize = [UIImage imageNamed:@""];
+        [self.canvasView setNeedsDisplay];
+        [self.backgroungImageView setNeedsDisplay];
     }
 }
 
