@@ -32,4 +32,18 @@
     CGContextSetLineCap(context, kCGLineCapSquare);
 }
 
+
+//- (void)awakeFromNib {
+//    [super awakeFromNib];
+//    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+//    self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self addSubview:self.backgroundImageView];
+//            [NSLayoutConstraint activateConstraints:@[
+//                [self.backgroundImageView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
+//                [self.backgroundImageView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
+//                [self.backgroundImageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
+//                [self.backgroundImageView.topAnchor constraintEqualToAnchor:self.topAnchor],
+//            ]];
+//}
+
 @end

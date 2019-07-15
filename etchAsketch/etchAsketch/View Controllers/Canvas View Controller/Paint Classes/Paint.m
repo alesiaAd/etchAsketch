@@ -16,6 +16,7 @@
     if((self = [super init])) {
         _path = [decoder decodeObjectForKey:@"path"];
         _imageFullSize = [decoder decodeObjectForKey:@"imageFullSize"];
+        _backgroundImage = [decoder decodeObjectForKey:@"backgroundImage"];
     }
     return self;
 }
@@ -23,11 +24,13 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.path forKey:@"path"];
     [encoder encodeObject:self.imageFullSize forKey:@"imageFullSize"];
+    [encoder encodeObject:self.backgroundImage forKey:@"backgroundImage"];
 }
 
 - (instancetype)init {
     if (self = [super init]) {
         _path = [NSMutableArray array];
+        _backgroundImage = [UIImage new];
     }
     return self;
 }

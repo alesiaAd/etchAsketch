@@ -16,6 +16,7 @@
 @interface PaintView : UIView
 
 @property (nonatomic, strong) Paint *paint;
+//@property (nonatomic, strong) UIImageView *backgroundImageView;
 - (void)createThumbnailForPaint;
 @end
 
