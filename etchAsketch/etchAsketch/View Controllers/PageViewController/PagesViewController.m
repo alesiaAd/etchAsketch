@@ -22,7 +22,7 @@ const NSInteger pagesCount = 2;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.parentViewController.title = @"Tutorial";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorNamed:@"RedBackground"];
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageController.dataSource = self;

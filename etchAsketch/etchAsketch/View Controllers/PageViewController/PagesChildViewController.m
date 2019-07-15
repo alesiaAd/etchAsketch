@@ -22,7 +22,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Page%ld", (long)self.index + 1]];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"screen%ld", (long)self.index + 1]];
+    self.pageImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.pageImage setImage:image];
 }
 
@@ -37,7 +38,7 @@
        [self.pageImage.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
        [self.pageImage.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
        [self.pageImage.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
-       [self.pageImage.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-36]
+       [self.pageImage.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-20]
        ]
      ];
 }
