@@ -47,18 +47,15 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.canvasView.paint = self.backgroundPaint;
+    if (self.backgroundPaint) {
+        self.canvasView.paint = self.backgroundPaint;
+    }
     self.backgroungImageView.backgroundColor = [UIColor whiteColor];
-    self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
+    //self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
     self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
-    if (self.canvasView.paint.path.count > 1) {
+    if (self.canvasView.paint.path.count > 0) {
         [self.canvasView setNeedsDisplay];
     }
-//    } else {
-//        self.backgroungImageView.backgroundColor = [UIColor whiteColor];
-//        self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
-//        self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
-//    }
     if (self.canvasView.paint.backgroundImage.size.width != 0) {
         self.canvasView.backgroundColor = [UIColor clearColor];
     }

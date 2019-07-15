@@ -26,7 +26,7 @@
         self.patterns = [NSMutableArray new];
         for (int i = 1; i <=7; i++) {
             Paint *paint = [Paint new];
-            paint.imageFullSize = [UIImage imageNamed:[NSString stringWithFormat:@"Pattern%d", i]];
+            paint.backgroundImage = [UIImage imageNamed:[NSString stringWithFormat:@"Pattern%d", i]];
             [self.patterns addObject:paint];
         }
     }

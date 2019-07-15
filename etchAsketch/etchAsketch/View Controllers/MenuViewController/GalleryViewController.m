@@ -71,7 +71,11 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     GalleryCollectionViewCell *cell = (GalleryCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.imageView.image = self.galleryArray[indexPath.item].imageFullSize;
+    if (self.galleryArray[indexPath.item].path.count > 0) {
+        cell.imageView.image = self.galleryArray[indexPath.item].imageFullSize;
+    } else {
+        cell.imageView.image = self.galleryArray[indexPath.item].backgroundImage;
+    }
     return cell;
 }
 
@@ -99,9 +103,10 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
 //        [imgView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:10],
 //    ]];
     
-    if (paint.backgroundImage.size.width == 0) {
-        paint.backgroundImage = self.galleryArray[indexPath.item].imageFullSize;
-    }
+//    if (paint.backgroundImage.size.width == 0) {
+//        paint.backgroundImage = self.galleryArray[indexPath.item].imageFullSize;
+//    }
+    paint.backgroundImage = self.galleryArray[indexPath.item].backgroundImage;
     [self.coordinatingDelegate showCanvasViewControllerWithSketch:paint];
 }
 
