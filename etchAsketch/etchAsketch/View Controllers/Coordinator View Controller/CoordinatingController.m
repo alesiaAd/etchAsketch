@@ -25,13 +25,13 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 @property (nonatomic, strong) GalleryViewController *patternsViewController;
 @property (nonatomic, strong) CanvasViewController *canvasViewController;
 @property (nonatomic, strong) PagesViewController *pagesViewController;
-
 @end
 
 
 @implementation CoordinatingController
 
 #pragma mark - Object Lifecycle
+
 - (instancetype)init {
     if (self = [super init]) {
         [self checkForFirstLaunch];
@@ -58,11 +58,11 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showMenu];
     if (self.isFirstLaunch) {
         [self showPages];
+    } else {
+        [self showMenu];
     }
-
 }
 
 #pragma mark -
@@ -105,26 +105,33 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 #pragma mark - CoordinatingDelegate
 
+- (void)configureAnimation {
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.62f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+}
+
 - (void)showCanvasViewController {
     self.navigationController.navigationBarHidden = YES;
-    [self.navigationController pushViewController:self.canvasViewController animated:YES];
+    [self configureAnimation];
+    [self.navigationController pushViewController:self.canvasViewController animated:NO];
 }
 
 - (void)showGalleryViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
+    [self configureAnimation];
     [[Drawings sharedInstance] loadData];
     self.galleryViewController.galleryArray = [Drawings sharedInstance].drawings;
-    [self.navigationController pushViewController:self.galleryViewController animated:YES];
+    [self.navigationController pushViewController:self.galleryViewController animated:NO];
 }
 
 - (void)showPatternsViewControllerWithCompletion:(nonnull CompletionHandler)handler {
     self.navigationController.navigationBarHidden = NO;
+    [self configureAnimation];
     self.patternsViewController.galleryArray = [Patterns sharedInstance].patterns;
-    [self.navigationController pushViewController:self.patternsViewController animated:YES];
-}
-
-- (void)showMenuWithCompletion:(nonnull CompletionHandler)handler {
-    [self showMenu];
+    [self.navigationController pushViewController:self.patternsViewController animated:NO];
 }
 
 - (void)hidePagesViewController {
@@ -132,13 +139,14 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
     [self.pagesViewController.view removeFromSuperview];
     [self.pagesViewController removeFromParentViewController];
     self.navigationItem.rightBarButtonItem = nil;
+    [self showMenu];
     [self.view setNeedsDisplay];
 }
 
 - (void)showCanvasViewControllerWithSketch:(Paint *)sketch {
     self.navigationController.navigationBarHidden = YES;
     self.canvasViewController.backgroundPaint = sketch;
-    [self.navigationController pushViewController:self.canvasViewController animated:YES];
+    [self showCanvasViewController];
 }
 
 - (void)swowCanvasViewControllerAndApplyDrawingSettings:(DrawingSettings *)settings {

@@ -25,7 +25,6 @@
 @property (nonatomic, strong) KnobView *knobControl;
 @property (nonatomic, strong) KnobView *knobControlX;
 
-
 - (IBAction)randomValueDidPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
