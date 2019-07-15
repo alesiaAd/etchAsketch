@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DrawingData.h"
 #import "KnobView.h"
 
 @class PaintView;
