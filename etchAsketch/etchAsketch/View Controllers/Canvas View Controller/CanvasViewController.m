@@ -20,10 +20,6 @@
     [self.knobPlaceHolderY addSubview:self.knobControl];
     [self.knobPlaceHolderX addSubview:self.knobControlX];
     
-    
-    self.viewR = [UIView new];
-    self.viewL = [UIView new];
-    
     self.knobControl.lineWidth = 10.0;
     self.knobControl.pointerLength = 12.0;
     self.knobControlX.lineWidth = 10.0;
@@ -182,8 +178,6 @@
     if (motion == UIEventSubtypeMotionShake) {
         NSLog(@"begin shake");
         self.canvasView.paint.path = @[].mutableCopy;
-        self.backgroungImageView.image = nil;
-        self.canvasView.paint.imageFullSize = [UIImage imageNamed:@""];
         [self.canvasView setNeedsDisplay];
         [self.backgroungImageView setNeedsDisplay];
     }
