@@ -34,7 +34,6 @@
 - (void)drawWithContext:(CGContextRef)context {
     CGFloat x = self.location.x;
     CGFloat y = self.location.y;
-    CGContextSetFillColorWithColor(context, self.color.CGColor);
     CGContextSetStrokeColorWithColor(context, self.color.CGColor);
     CGContextSetLineWidth(context, self.size.width);
     CGContextAddLineToPoint(context, x, y);

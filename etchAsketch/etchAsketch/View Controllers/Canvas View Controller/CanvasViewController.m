@@ -13,7 +13,17 @@
 #import "PaintView.h"
 #import "Paint.h"
 
+@interface CanvasViewController ()
+
+@property (nonatomic, assign) CGFloat stylusPositionX;
+
+@property (nonatomic, assign) CGFloat stylusPositionY;
+
+
+@end
+
 @implementation CanvasViewController
+
 - (void)viewDidLoad {
     self.knobControl = [[KnobView alloc] initWithFrame:self.knobPlaceHolderY.bounds];
     self.knobControlX = [[KnobView alloc] initWithFrame:self.knobPlaceHolderX.bounds];
@@ -34,12 +44,7 @@
     
     
     [self.saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents: UIControlEventTouchUpInside];
-    Vertex *vertex = [Vertex new];
-    CGPoint translation = CGPointMake(self.knobControlX.value,self.knobControl.value);
-    vertex.location = translation;
-    vertex.color = [UIColor blackColor];
-    self.canvasView.paint = [Paint new];
-    [self.canvasView.paint addVertexToPath: vertex];
+    [self moveStylusToStart];
     [self.canvasView setNeedsDisplay];
     self.drawingData = [Paint new];
     [Drawings sharedInstance].drawings = [NSMutableArray new];
@@ -62,6 +67,18 @@
         
     }
 }
+
+- (void)moveStylusToStart {
+    Vertex *vertex = [Vertex new];
+    self.stylusPositionX = CGRectGetMidX(self.canvasView.bounds);
+    self.stylusPositionY = CGRectGetMidY(self.canvasView.bounds);
+    CGPoint translation = CGPointMake(self.stylusPositionX, self.stylusPositionY);
+    vertex.location = translation;
+    vertex.color = [UIColor blackColor];
+    self.canvasView.paint = [Paint new];
+    [self.canvasView.paint addVertexToPath: vertex];
+}
+
 
 - (void)submit {
     ImagesComparator *comparator = [ImagesComparator new];
@@ -146,7 +163,6 @@
 }
 
 - (IBAction)randomValueDidPressed:(id)sender {
-    //   CGFloat randomValue =  (arc4random() % 101) / 100.f;
     [self.knobControl setValue:self.canvasView.frame.size.height];
     [self.knobControlX setValue:self.canvasView.frame.size.width];
     
@@ -161,10 +177,6 @@
 {
     self.knobControl.maximumValue = self.canvasView.frame.size.height;
     self.knobControlX.maximumValue = self.canvasView.frame.size.width;
-  //  NSLog(@"%f, %f",self.knobControl.maximumValue,self.knobControlX.maximumValue);
-    
-    
-    
     Vertex *vertex = [Vertex new];
     CGPoint translation = CGPointMake(self.knobControlX.value,self.knobControl.value);
     vertex.location = translation;
@@ -176,7 +188,6 @@
 }
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
-        NSLog(@"begin shake");
         self.canvasView.paint.path = @[].mutableCopy;
         [self.canvasView setNeedsDisplay];
         [self.backgroungImageView setNeedsDisplay];

@@ -24,26 +24,19 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextBeginPath(context);
-    CGContextMoveToPoint(context, 0, 0);
-    for (Vertex *vertex in self.paint.path) {
-        [vertex drawWithContext:context];
-    }
+    [self.paint.path enumerateObjectsUsingBlock:^(Vertex * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx == 0) {
+            CGContextMoveToPoint(context, obj.location.x, obj.location.y);
+        }
+        [obj drawWithContext:context];
+    }];
+//    for (Vertex *vertex in self.paint.path) {
+//
+//
+//    }
     CGContextDrawPath(context, kCGPathStroke);
     CGContextSetLineCap(context, kCGLineCapSquare);
 }
 
-
-//- (void)awakeFromNib {
-//    [super awakeFromNib];
-//    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-//    self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = NO;
-//    [self addSubview:self.backgroundImageView];
-//            [NSLayoutConstraint activateConstraints:@[
-//                [self.backgroundImageView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-//                [self.backgroundImageView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-//                [self.backgroundImageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
-//                [self.backgroundImageView.topAnchor constraintEqualToAnchor:self.topAnchor],
-//            ]];
-//}
 
 @end
