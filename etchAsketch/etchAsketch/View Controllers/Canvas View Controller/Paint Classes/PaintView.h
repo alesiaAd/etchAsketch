@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @class Paint;
 
@@ -19,4 +19,4 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)createThumbnailForPaint;
 @end
 
-NS_ASSUME_NONNULL_END
+
