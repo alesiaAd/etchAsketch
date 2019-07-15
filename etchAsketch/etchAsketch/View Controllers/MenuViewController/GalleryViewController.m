@@ -89,17 +89,17 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
     Paint *paint = self.galleryArray[indexPath.item];
     self.navigationController.navigationBarHidden = NO;
     [self.navigationController popViewControllerAnimated:NO];
-    UIView *imgView = [UIView new];
-    imgView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:imgView];
-    [NSLayoutConstraint activateConstraints:@[
-        [imgView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:10],
-        [imgView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-10],
-        [imgView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-10],
-        [imgView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:10],
-    ]];
+//    UIView *imgView = [UIView new];
+//    imgView.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self.view addSubview:imgView];
+//    [NSLayoutConstraint activateConstraints:@[
+//        [imgView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:10],
+//        [imgView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-10],
+//        [imgView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-10],
+//        [imgView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:10],
+//    ]];
     
-    if (paint.path.count == 0) {
+    if (paint.backgroundImage.size.width == 0) {
         paint.backgroundImage = self.galleryArray[indexPath.item].imageFullSize;
     }
     [self.coordinatingDelegate showCanvasViewControllerWithSketch:paint];

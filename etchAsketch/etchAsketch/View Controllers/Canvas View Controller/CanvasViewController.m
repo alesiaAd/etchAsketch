@@ -48,14 +48,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.canvasView.paint = self.backgroundPaint;
+    self.backgroungImageView.backgroundColor = [UIColor whiteColor];
+    self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
+    self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
     if (self.canvasView.paint.path.count > 1) {
         [self.canvasView setNeedsDisplay];
-    } else {
-        self.backgroungImageView.backgroundColor = [UIColor whiteColor];
-        self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
-        self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
     }
-    if (self.canvasView.paint.backgroundImage) {
+//    } else {
+//        self.backgroungImageView.backgroundColor = [UIColor whiteColor];
+//        self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
+//        self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
+//    }
+    if (self.canvasView.paint.backgroundImage.size.width != 0) {
         self.canvasView.backgroundColor = [UIColor clearColor];
     }
 }
@@ -94,6 +98,7 @@
 - (void)saveButtonPressed {
     [self createViewsScreenShot];
     self.drawingData.imageFullSize = self.canvasView.paint.imageFullSize;
+    self.drawingData.backgroundImage = self.canvasView.paint.backgroundImage;
     [[Drawings sharedInstance].drawings addObject:self.drawingData];
     [[Drawings sharedInstance] saveData];
 }
