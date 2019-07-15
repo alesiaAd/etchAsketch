@@ -47,6 +47,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.submitButton.hidden = YES;
     if (self.backgroundPaint) {
         self.canvasView.paint = self.backgroundPaint;
     }
@@ -58,7 +59,22 @@
     }
     if (self.canvasView.paint.backgroundImage.size.width != 0) {
         self.canvasView.backgroundColor = [UIColor clearColor];
+        self.submitButton.hidden = NO;
+        [self.submitButton addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
+        
     }
+}
+
+- (void)submit {
+    ImagesComparator *comparator = [ImagesComparator new];
+    NSInteger result = [comparator compareImage:[self createBackgroundViewScreenShot] withImage:[self createForegroundViewScreenShot]];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hoorah!" message:[NSString stringWithFormat:@"Your result is %ld", (long)result] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+- (NSInteger)compareBackgroundImage:(UIImage *)backgroundImage withForegroundImage:(UIImage *)foregroundImage {
+    return 0;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -106,6 +122,24 @@
     [self.canvasView.layer renderInContext:UIGraphicsGetCurrentContext()];
     self.canvasView.paint.imageFullSize = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+}
+
+- (UIImage *)createBackgroundViewScreenShot {
+    UIImage *screen = [UIImage new];
+    UIGraphicsBeginImageContextWithOptions(self.canvasView.frame.size, NO, [UIScreen mainScreen].scale);
+    [self.backgroungImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    screen = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return screen;
+}
+
+- (UIImage *)createForegroundViewScreenShot {
+    UIImage *screen = [UIImage new];
+    UIGraphicsBeginImageContextWithOptions(self.canvasView.frame.size, NO, [UIScreen mainScreen].scale);
+    [self.canvasView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    screen = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return screen;
 }
 
 - (void)didReceiveMemoryWarning {
