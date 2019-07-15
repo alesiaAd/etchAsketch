@@ -29,10 +29,10 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
     self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.collectionView];
     [NSLayoutConstraint activateConstraints:@[
-        [self.collectionView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:50],
-        [self.collectionView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-50],
-        [self.collectionView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor],
-        [self.collectionView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+        [self.collectionView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:10],
+        [self.collectionView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-10],
+        [self.collectionView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-10],
+        [self.collectionView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:10],
     ]];
     
     self.collectionView.delegate = self;
@@ -89,6 +89,19 @@ static NSString *cellIdentifier = @"GalleryCollectionViewCell";
     Paint *paint = self.galleryArray[indexPath.item];
     self.navigationController.navigationBarHidden = NO;
     [self.navigationController popViewControllerAnimated:NO];
+    UIView *imgView = [UIView new];
+    imgView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:imgView];
+    [NSLayoutConstraint activateConstraints:@[
+        [imgView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:10],
+        [imgView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-10],
+        [imgView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-10],
+        [imgView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:10],
+    ]];
+    
+    if (paint.path.count == 0) {
+        paint.backgroundImage = self.galleryArray[indexPath.item].imageFullSize;
+    }
     [self.coordinatingDelegate showCanvasViewControllerWithSketch:paint];
 }
 

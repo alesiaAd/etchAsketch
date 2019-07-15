@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSMutableArray<Vertex *> *path;
 @property (nonatomic, strong) UIImage *imageFullSize;
+@property (nonatomic, strong) UIImage *backgroundImage;
 
 - (void)addVertexToPath:(Vertex *)vertex;
 - (void)removeLastVertex;

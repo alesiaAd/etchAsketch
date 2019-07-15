@@ -31,11 +31,12 @@ static NSString * drawingsKey = @"drawings";
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     NSData *dataArray = [fileHandle readDataToEndOfFile];
     NSMutableArray *arrayOfEncodedObjects = [NSKeyedUnarchiver unarchiveObjectWithData:dataArray];
-    self.drawings = [NSMutableArray new];
+    NSMutableArray *encodedDrawings = [NSMutableArray new];
     for (NSData *encodedObject in arrayOfEncodedObjects) {
         Paint *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-        [self.drawings addObject:decodedObject];
+        [encodedDrawings addObject:decodedObject];
     }
+    self.drawings = encodedDrawings;
 }
 
 - (void)saveData {

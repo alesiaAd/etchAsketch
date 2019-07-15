@@ -13,6 +13,7 @@
 #import "CanvasViewController.h"
 #import "Patterns.h"
 #import "Drawings.h"
+#import "PaintView.h"
 
 static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
@@ -145,6 +146,7 @@ static NSString *const hasRunOnceKey = @"hasRunAppOnceKey";
 
 - (void)showCanvasViewControllerWithSketch:(Paint *)sketch {
     self.navigationController.navigationBarHidden = YES;
+    //self.canvasViewController.canvasView.paint = sketch;
     self.canvasViewController.backgroundPaint = sketch;
     [self showCanvasViewController];
 }

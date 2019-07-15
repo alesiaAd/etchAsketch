@@ -43,16 +43,19 @@
     [self.canvasView.paint addVertexToPath: vertex];
     [self.canvasView setNeedsDisplay];
     self.drawingData = [Paint new];
+    [Drawings sharedInstance].drawings = [NSMutableArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if (self.backgroundPaint.path.count > 0) {
+    self.canvasView.paint = self.backgroundPaint;
+    if (self.canvasView.paint.path.count > 1) {
         [self.canvasView setNeedsDisplay];
     } else {
         self.backgroungImageView.backgroundColor = [UIColor whiteColor];
-        self.backgroungImageView.image = self.backgroundPaint.imageFullSize;
+        self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
+        self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
     }
-    if (self.backgroungImageView.image) {
+    if (self.canvasView.paint.backgroundImage) {
         self.canvasView.backgroundColor = [UIColor clearColor];
     }
 }
@@ -60,9 +63,17 @@
 - (void)viewWillDisappear:(BOOL)animated {
     self.canvasView.paint.path = @[].mutableCopy;
     self.backgroungImageView.image = nil;
-    self.backgroundPaint.imageFullSize = [UIImage imageNamed:@""];
+    self.canvasView.paint.backgroundImage = [UIImage imageNamed:@""];
     [self.canvasView setNeedsDisplay];
     [self.backgroungImageView setNeedsDisplay];
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 - (IBAction)showMenu:(id)sender {
@@ -77,6 +88,7 @@
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionMoveIn;
     [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)saveButtonPressed {
