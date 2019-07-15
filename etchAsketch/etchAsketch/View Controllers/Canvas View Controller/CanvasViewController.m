@@ -52,7 +52,6 @@
         self.canvasView.paint = self.backgroundPaint;
     }
     self.backgroungImageView.backgroundColor = [UIColor whiteColor];
-    //self.canvasView.paint.backgroundImage = [self imageWithImage:self.canvasView.paint.backgroundImage scaledToSize:self.canvasView.frame.size];
     self.backgroungImageView.image = self.canvasView.paint.backgroundImage;
     if (self.canvasView.paint.path.count > 0) {
         [self.canvasView setNeedsDisplay];
@@ -67,14 +66,15 @@
 
 - (void)submit {
     ImagesComparator *comparator = [ImagesComparator new];
-    NSInteger result = [comparator compareImage:[self createBackgroundViewScreenShot] withImage:[self createForegroundViewScreenShot]];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hoorah!" message:[NSString stringWithFormat:@"Your result is %ld", (long)result] preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-- (NSInteger)compareBackgroundImage:(UIImage *)backgroundImage withForegroundImage:(UIImage *)foregroundImage {
-    return 0;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        NSInteger result = [comparator compareImage:[self createBackgroundViewScreenShot] withImage:[self createForegroundViewScreenShot]];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hoorah!" message:[NSString stringWithFormat:@"Your result is %ld", (long)result] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
