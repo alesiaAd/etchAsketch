@@ -147,6 +147,7 @@
 
 - (IBAction)randomValueDidPressed:(id)sender {
     //   CGFloat randomValue =  (arc4random() % 101) / 100.f;
+    
     [self.knobControl setValue:self.canvasView.frame.size.height];
     [self.knobControlX setValue:self.canvasView.frame.size.width];
     
@@ -163,8 +164,6 @@
     self.knobControlX.maximumValue = self.canvasView.frame.size.width;
   //  NSLog(@"%f, %f",self.knobControl.maximumValue,self.knobControlX.maximumValue);
     
-    
-    
     Vertex *vertex = [Vertex new];
     CGPoint translation = CGPointMake(self.knobControlX.value,self.knobControl.value);
     vertex.location = translation;
@@ -173,19 +172,26 @@
     [self.canvasView.paint addVertexToPath:vertex];
     [self.drawingData.path addObject:vertex];
     [self.canvasView setNeedsDisplay];
+
 }
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
         NSLog(@"begin shake");
+        
+        self.knobControl.value = 0;
+        self.knobControlX.value = 0;
         self.canvasView.paint.path = @[].mutableCopy;
         [self.canvasView setNeedsDisplay];
         [self.backgroungImageView setNeedsDisplay];
+  
     }
 }
 
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
         NSLog(@"end shake");
+        
+        
     }
 }
 
