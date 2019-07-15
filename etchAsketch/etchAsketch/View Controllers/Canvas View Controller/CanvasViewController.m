@@ -24,6 +24,9 @@
 
 @implementation CanvasViewController
 
+
+#pragma - mark ViewController lifecycle
+
 - (void)viewDidLoad {
     self.knobControl = [[KnobView alloc] initWithFrame:self.knobPlaceHolderY.bounds];
     self.knobControlX = [[KnobView alloc] initWithFrame:self.knobPlaceHolderX.bounds];
@@ -68,6 +71,20 @@
     }
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.canvasView.paint.path = @[].mutableCopy;
+    self.backgroungImageView.image = nil;
+    self.canvasView.paint.backgroundImage = [UIImage imageNamed:@""];
+    [self.canvasView setNeedsDisplay];
+    [self.backgroungImageView setNeedsDisplay];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma - mark
 - (void)moveStylusToStart {
     Vertex *vertex = [Vertex new];
     self.stylusPositionX = CGRectGetMidX(self.canvasView.bounds);
@@ -79,6 +96,7 @@
     [self.canvasView.paint addVertexToPath: vertex];
 }
 
+#pragma - mark
 
 - (void)submit {
     ImagesComparator *comparator = [ImagesComparator new];
@@ -97,13 +115,6 @@
     });
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    self.canvasView.paint.path = @[].mutableCopy;
-    self.backgroungImageView.image = nil;
-    self.canvasView.paint.backgroundImage = [UIImage imageNamed:@""];
-    [self.canvasView setNeedsDisplay];
-    [self.backgroungImageView setNeedsDisplay];
-}
 
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
@@ -162,9 +173,7 @@
     return screen;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
 
 - (IBAction)randomValueDidPressed:(id)sender {
     [self.knobControl setValue:self.canvasView.frame.size.height];
@@ -198,15 +207,11 @@
         self.canvasView.paint.path = @[].mutableCopy;
         [self.canvasView setNeedsDisplay];
         [self.backgroungImageView setNeedsDisplay];
-  
     }
 }
 
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
-        NSLog(@"end shake");
-        
-        
     }
 }
 

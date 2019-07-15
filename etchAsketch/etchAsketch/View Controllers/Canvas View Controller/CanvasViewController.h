@@ -21,9 +21,6 @@
 @property (weak, nonatomic) IBOutlet PaintView *canvasView;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderY;
 @property (weak, nonatomic) IBOutlet UIView *knobPlaceHolderX;
-@property (strong,nonatomic) NSArray *array;
-@property (nonatomic,strong) UIView *viewR;
-@property (nonatomic,strong) UIView *viewL;
 @property (nonatomic, strong) KnobView *knobControl;
 @property (nonatomic, strong) KnobView *knobControlX;
 

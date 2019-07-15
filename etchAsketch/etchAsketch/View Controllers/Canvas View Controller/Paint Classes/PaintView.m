@@ -30,10 +30,6 @@
         }
         [obj drawWithContext:context];
     }];
-//    for (Vertex *vertex in self.paint.path) {
-//
-//
-//    }
     CGContextDrawPath(context, kCGPathStroke);
     CGContextSetLineCap(context, kCGLineCapSquare);
 }

@@ -130,7 +130,6 @@
 			children = (
 				7A07828422D9F8260046B0B5 /* Coordinator View Controller */,
 				7A07827A22D9F54E0046B0B5 /* Canvas View Controller */,
-				F8AB679922D9ADEF00C9D954 /* PageViewController */,
 				7A07827422D9F4EB0046B0B5 /* MenuViewController */,
 				7A07828F22DAB4CA0046B0B5 /* UINavigationBar */,
 			);
@@ -140,14 +139,10 @@
 		7A07827422D9F4EB0046B0B5 /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F8AB679922D9ADEF00C9D954 /* PageViewController */,
+				7A90B50A22DCCB9100D1FA30 /* Gallery View Controller */,
 				F8AB676422D92ABD00C9D954 /* MenuViewController.h */,
 				F8AB676522D92ABD00C9D954 /* MenuViewController.m */,
-				F8AB679322D9509400C9D954 /* GalleryViewController.h */,
-				F8AB679422D9509400C9D954 /* GalleryViewController.m */,
-				F8550E2522DB160D00DFC1E5 /* GalleryCollectionViewCell.h */,
-				F8550E2622DB160D00DFC1E5 /* GalleryCollectionViewCell.m */,
-				F8550E2822DB2D5F00DFC1E5 /* Patterns.h */,
-				F8550E2922DB2D5F00DFC1E5 /* Patterns.m */,
 			);
 			path = MenuViewController;
 			sourceTree = "<group>";
@@ -155,14 +150,7 @@
 		7A07827A22D9F54E0046B0B5 /* Canvas View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8A01B4F22DA70E800775C92 /* Drawings.h */,
-				F8A01B4E22DA70E800775C92 /* Drawings.m */,
-				F8A01B5122DA70E800775C92 /* KnobGestureRecognizer.h */,
-				F8A01B4D22DA70E800775C92 /* KnobGestureRecognizer.m */,
-				F8A01B5222DA70E800775C92 /* KnobRender.h */,
-				F8A01B5322DA70E800775C92 /* KnobRender.m */,
-				F8A01B5422DA70E800775C92 /* KnobView.h */,
-				F8A01B5522DA70E900775C92 /* KnobView.m */,
+				7A90B50922DCCB6000D1FA30 /* Knob Classes */,
 				7A07828522D9F8D80046B0B5 /* Paint Classes */,
 				7A07827522D9F53F0046B0B5 /* CanvasViewController.h */,
 				7A07827622D9F53F0046B0B5 /* CanvasViewController.m */,
@@ -184,6 +172,8 @@
 		7A07828522D9F8D80046B0B5 /* Paint Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F8A01B4F22DA70E800775C92 /* Drawings.h */,
+				F8A01B4E22DA70E800775C92 /* Drawings.m */,
 				7A07827B22D9F74E0046B0B5 /* Paint.h */,
 				7A07827C22D9F74E0046B0B5 /* Paint.m */,
 				7A07828922DA944B0046B0B5 /* Vertex.h */,
@@ -201,6 +191,32 @@
 				7A07829122DAB5410046B0B5 /* UINavigationBar+EatchASketch.m */,
 			);
 			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		7A90B50922DCCB6000D1FA30 /* Knob Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8A01B5122DA70E800775C92 /* KnobGestureRecognizer.h */,
+				F8A01B4D22DA70E800775C92 /* KnobGestureRecognizer.m */,
+				F8A01B5222DA70E800775C92 /* KnobRender.h */,
+				F8A01B5322DA70E800775C92 /* KnobRender.m */,
+				F8A01B5422DA70E800775C92 /* KnobView.h */,
+				F8A01B5522DA70E900775C92 /* KnobView.m */,
+			);
+			path = "Knob Classes";
+			sourceTree = "<group>";
+		};
+		7A90B50A22DCCB9100D1FA30 /* Gallery View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F8AB679322D9509400C9D954 /* GalleryViewController.h */,
+				F8AB679422D9509400C9D954 /* GalleryViewController.m */,
+				F8550E2522DB160D00DFC1E5 /* GalleryCollectionViewCell.h */,
+				F8550E2622DB160D00DFC1E5 /* GalleryCollectionViewCell.m */,
+				F8550E2822DB2D5F00DFC1E5 /* Patterns.h */,
+				F8550E2922DB2D5F00DFC1E5 /* Patterns.m */,
+			);
+			path = "Gallery View Controller";
 			sourceTree = "<group>";
 		};
 		F8A01B3F22DA39EF00775C92 /* ImagesComparator */ = {
@@ -235,12 +251,12 @@
 		F8AB676022D92ABD00C9D954 /* etchAsketch */ = {
 			isa = PBXGroup;
 			children = (
-				F8A01B3F22DA39EF00775C92 /* ImagesComparator */,
 				F8AB676122D92ABD00C9D954 /* AppDelegate.h */,
 				F8AB676222D92ABD00C9D954 /* AppDelegate.m */,
 				F8AB676A22D92ABF00C9D954 /* Assets.xcassets */,
 				F8AB676F22D92ABF00C9D954 /* Info.plist */,
 				F8AB677022D92ABF00C9D954 /* main.m */,
+				F8A01B3F22DA39EF00775C92 /* ImagesComparator */,
 				7A07827322D9F49C0046B0B5 /* View Controllers */,
 			);
 			path = etchAsketch;

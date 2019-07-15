@@ -13,8 +13,8 @@
 
 @property (nonatomic, strong) NSMutableArray *drawings;
 
-- (void) loadData;
-- (void) saveData;
+- (void)loadData;
+- (void)saveData;
 + (instancetype)sharedInstance;
 
 @end
