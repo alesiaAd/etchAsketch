@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KnobView.h"
 
 @class PaintView;
 @class Paint;
@@ -21,6 +21,8 @@
 @property (strong,nonatomic) NSArray *array;
 @property (nonatomic,strong) UIView *viewR;
 @property (nonatomic,strong) UIView *viewL;
+@property (nonatomic, strong) KnobView *knobControl;
+@property (nonatomic, strong) KnobView *knobControlX;
 
 - (IBAction)randomValueDidPressed:(id)sender;
 

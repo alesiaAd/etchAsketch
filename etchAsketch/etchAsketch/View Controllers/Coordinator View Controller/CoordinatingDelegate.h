@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 typedef void(^CompletionHandler)(void);
 @class Paint;
@@ -28,4 +28,4 @@ typedef void(^CompletionHandler)(void);
 
 
 
-NS_ASSUME_NONNULL_END
+

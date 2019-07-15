@@ -38,6 +38,8 @@
     CGContextSetStrokeColorWithColor(context, self.color.CGColor);
     CGContextSetLineWidth(context, self.size.width);
     CGContextAddLineToPoint(context, x, y);
+    CGContextSetAlpha(context, 0.7);
+    
 }
 
 @end
