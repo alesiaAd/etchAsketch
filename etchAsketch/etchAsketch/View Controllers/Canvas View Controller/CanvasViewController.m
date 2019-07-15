@@ -65,8 +65,12 @@
 
 - (void)submit {
     ImagesComparator *comparator = [ImagesComparator new];
+    UIImage *backgroungImage = [UIImage new];
+    backgroungImage = [self createBackgroundViewScreenShot];
+    UIImage *foregroundImage = [UIImage new];
+    foregroundImage = [self createForegroundViewScreenShot];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        NSInteger result = [comparator compareImage:[self createBackgroundViewScreenShot] withImage:[self createForegroundViewScreenShot]];
+        NSInteger result = [comparator compareImage:backgroungImage withImage:foregroundImage];
         dispatch_async(dispatch_get_main_queue(), ^(void){
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hoorah!" message:[NSString stringWithFormat:@"Your result is %ld", (long)result] preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
