@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "KnobView.h"
+#import "ImagesComparator.h"
 
 @class PaintView;
 @class Paint;
 
+
 @interface CanvasViewController : UIViewController <UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroungImageView;
 @property (nonatomic, strong) Paint *backgroundPaint;
 @property (weak, nonatomic) IBOutlet PaintView *canvasView;
