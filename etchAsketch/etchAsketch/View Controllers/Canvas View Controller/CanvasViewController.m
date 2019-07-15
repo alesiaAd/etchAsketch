@@ -185,18 +185,24 @@
     [self.canvasView.paint addVertexToPath:vertex];
     [self.drawingData.path addObject:vertex];
     [self.canvasView setNeedsDisplay];
+
 }
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
+        self.knobControl.value = 0;
+        self.knobControlX.value = 0;
         self.canvasView.paint.path = @[].mutableCopy;
         [self.canvasView setNeedsDisplay];
         [self.backgroungImageView setNeedsDisplay];
+  
     }
 }
 
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake) {
         NSLog(@"end shake");
+        
+        
     }
 }
 
